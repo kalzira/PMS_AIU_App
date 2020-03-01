@@ -13,6 +13,14 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
 
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener{
+        void OnItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
     private ArrayList<ItemHomeModel> mItemHomeList;
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder{
@@ -21,7 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView today_home, date_home;
 
 
-        public ItemViewHolder(@NonNull View itemView) {
+        public ItemViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
             //img
             home_photo = itemView.findViewById(R.id.home_photo);
@@ -36,7 +44,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             today_home = itemView.findViewById(R.id.today_home);
             date_home = itemView.findViewById(R.id.date_home);
 
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener!=null){
+                        int positon= getAdapterPosition();
+                        listener.OnItemClick(positon);
+                    }
+                }
+            });
 
 
         }
@@ -49,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_layout_item, parent,false);
-        ItemViewHolder itemViewHolder = new ItemViewHolder(v);
+        ItemViewHolder itemViewHolder = new ItemViewHolder(v, mListener);
         return itemViewHolder;
     }
 

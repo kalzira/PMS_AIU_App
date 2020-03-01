@@ -10,7 +10,7 @@ import android.widget.Button;
 public class SignInActivity extends AppCompatActivity {
 
 
-    private Button signIn;
+    private Button signIn, closeBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,14 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent signInActivity = new Intent(SignInActivity.this, HomePageActivity.class);
                 startActivity(signInActivity);
+            }
+        });
+
+        closeBtn = findViewById(R.id.closeBtn_signIn);
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

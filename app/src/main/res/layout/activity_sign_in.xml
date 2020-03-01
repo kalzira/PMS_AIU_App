@@ -9,7 +9,7 @@
 
     <!-- close -->
     <Button
-        android:id="@+id/close"
+        android:id="@+id/closeBtn_signIn"
         android:layout_width="14dp"
         android:layout_height="14dp"
         android:layout_marginLeft="15dp"

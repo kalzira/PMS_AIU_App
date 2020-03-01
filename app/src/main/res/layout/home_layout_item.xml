@@ -9,7 +9,7 @@
     <!-- Saturday 25 January -->
     <TextView
         android:id="@+id/date_home"
-        android:layout_width="137dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"

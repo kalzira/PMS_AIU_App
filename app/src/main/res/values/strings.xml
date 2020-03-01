@@ -140,7 +140,7 @@ SMM
 </string>
 
 
-<!--PROFILE-->
+    <!--PROFILE-->
 
     <string name="name_surnam_profile">
 
@@ -187,13 +187,24 @@ Status:
     <!--PROFILE-->
 
 
-<!--     HOME-->
+    <!--     HOME-->
     <string name="saturday_25">SATURDAY 25 JANUARY</string>
     <string name="today">Today</string>
 
 
-
     <string name="title_activity_home_page">HomePageActivity</string>
+
+<!--    NEWS DETAIL-->
+
+    <string name="txt_newsDetail">
+
+Reprehenderit non irure dolore ullamco aute. Enim dolor ipsum quis tempor dolor deserunt nostrud do quis minim enim ipsum. Esse ad excepteur enim reprehenderit duis consequat mollit. Dolor labore exercitation voluptate aute dolore esse dolor occaecat amet laboris enim.\n\nCupidatat esse quis tempor voluptate Lorem reprehenderit tempor officia cupidatat proident consectetur eiusmod consequat aliquip. Eiusmod officia dolor fugiat tempor ullamco proident ut pariatur nostrud eu officia consectetur irure sunt.
+Reprehenderit non irure dolore ullamco aute. Enim dolor ipsum quis tempor dolor deserunt nostrud do quis minim enim ipsum. Esse ad excepteur enim reprehenderit duis consequat mollit. Dolor labore exercitation voluptate aute dolore esse dolor occaecat amet laboris enim.\n\nCupidatat esse quis tempor voluptate Lorem reprehenderit tempor officia cupidatat proident consectetur eiusmod consequat aliquip. Eiusmod officia dolor fugiat tempor ullamco proident ut pariatur nostrud eu officia consectetur irure sunt.
+Reprehenderit non irure dolore ullamco aute. Enim dolor ipsum quis tempor dolor deserunt nostrud do quis minim enim ipsum. Esse ad excepteur enim reprehenderit duis consequat mollit. Dolor labore exercitation voluptate aute dolore esse dolor occaecat amet laboris enim.\n\nCupidatat esse quis tempor voluptate Lorem reprehenderit tempor officia cupidatat proident consectetur eiusmod consequat aliquip. Eiusmod officia dolor fugiat tempor ullamco proident ut pariatur nostrud eu officia consectetur irure sunt.
+
+
+    </string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

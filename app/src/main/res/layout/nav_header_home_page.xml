@@ -50,7 +50,7 @@
             android:layout_marginLeft="35dp"
             android:gravity="right"
             android:contentDescription="@string/nav_header_desc"
-            android:src="@drawable/bitmap" />
+            android:src="@drawable/logo_1" />
     </LinearLayout>
 
 
