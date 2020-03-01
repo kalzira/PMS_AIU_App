@@ -88,25 +88,25 @@ Other events
 </string>
 
     <!-- strings.xml -->
-    <string name="software_en">
+    <string name="title_event">
 
 Software engineering \nSeminar
 </string>
 
     <!-- strings.xml -->
-    <string name="nurlan_shai">
+    <string name="speaker_event">
 
 Nurlan Shaidullaev
 </string>
 
-    <string name="time">
+    <string name="time_event">
 
 11:00-13:00
 </string>
 
 
     <!-- strings.xml -->
-    <string name="a309">
+    <string name="location_event">
 
 A309
 </string>
@@ -186,6 +186,13 @@ Status:
 
     <!--PROFILE-->
 
+
+<!--     HOME-->
+    <string name="saturday_25">SATURDAY 25 JANUARY</string>
+    <string name="today">Today</string>
+
+
+
     <string name="title_activity_home_page">HomePageActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -210,5 +217,6 @@ Status:
     <string name="email_profile">Email:</string>
     <string name="kalzira_s_email_profile">kalzira.sabytakunova@iaau.edu.kg</string>
     <string name="title_profile">Student Information</string>
+
 
 </resources>

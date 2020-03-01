@@ -128,7 +128,7 @@
 
     <!-- 16010109437 -->
     <TextView
-        android:id="@+id/some_id_profile"
+        android:id="@+id/time_event"
         android:layout_width="144dp"
         android:layout_height="22dp"
         android:layout_marginStart="48dp"
@@ -178,7 +178,7 @@
         android:textAppearance="@style/info_profile"
         android:translationY="-1.8sp"
         app:layout_constraintStart_toEndOf="@+id/birth_date_profile"
-        app:layout_constraintTop_toBottomOf="@+id/some_id_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/time_event" />
 
     <!-- Class: -->
     <TextView
