@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:id="@+id/group_1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_studentInf"
+            android:title="@string/student_inf"
+            />
+            <item
+                android:id="@+id/nav_schOfLectures"
+                android:title="@string/schedule_of" />
+            <item
+                android:id="@+id/nav_myGrades"
+                android:title="@string/my_grades" />
+            <item
+                android:id="@+id/nav_transcript"
+                android:title="@string/transcript" />
+
+    </group>
+
+    <group
+        android:id="@+id/group_2"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_qa"
+            android:title="@string/questionnai" />
+        <item
+            android:id="@+id/nav_mail"
+            android:title="@string/university_" />
+
+    </group>
+
+
+</menu>

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pms_aiu.ProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#EFEFF4"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextAppearance="@style/TitleText">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="11dp">
+
+            <Button
+                android:layout_width="12dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/arrow"
+                android:paddingStart="9dp"
+                android:paddingLeft="9dp"
+                android:paddingTop="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </Button>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="172dp"
+                android:layout_height="22dp"
+                android:gravity="center"
+                android:lineSpacingExtra="2sp"
+                android:text="@string/title_profile"
+                android:textAppearance="@style/title_profile"
+                android:translationY="-0.86sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Ajo 1 -->
+    <View
+        android:id="@+id/photo_profile"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/logo_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_profile" />
+
+
+    <!-- Name Surname: -->
+    <TextView
+        android:id="@+id/name_surnam_profile"
+        android:layout_width="102dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="29dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/name_surnam_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/photo_profile" />
+
+    <!-- Akzholtoi Kanimetova -->
+    <TextView
+        android:id="@+id/kalzira_s_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="29dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/kalzira_s"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/name_surnam_profile"
+        app:layout_constraintTop_toBottomOf="@+id/photo_profile" />
+
+
+    <!-- Student ID: -->
+    <TextView
+        android:id="@+id/student_id_profile"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/student_id_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_surnam_profile" />
+
+    <!-- 16010109437 -->
+    <TextView
+        android:id="@+id/some_id_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="16dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/some_id"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/student_id_profile"
+        app:layout_constraintTop_toBottomOf="@+id/kalzira_s_profile" />
+
+    <!-- Birth Date: -->
+    <TextView
+        android:id="@+id/birth_date_profile"
+        android:layout_width="67dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/birth_date_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_id_profile" />
+
+
+    <!-- 05/02/1998 -->
+    <TextView
+        android:id="@+id/bday_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="16dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/bday_profile"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/birth_date_profile"
+        app:layout_constraintTop_toBottomOf="@+id/some_id_profile" />
+
+    <!-- Class: -->
+    <TextView
+        android:id="@+id/class_profile"
+        android:layout_width="39dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/class_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birth_date_profile" />
+
+    <!-- COM-16 -->
+    <TextView
+        android:id="@+id/com16_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginLeft="79dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/com_16_profile"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/class_profile"
+        app:layout_constraintTop_toBottomOf="@+id/bday_profile" />
+
+    <!-- Advisor: -->
+    <TextView
+        android:id="@+id/advisor_profile"
+        android:layout_width="52dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/advisor_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_profile" />
+
+
+    <!-- Nurlan Shaidullaev -->
+    <TextView
+        android:id="@+id/nurlan_shai_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="14dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/nurlan_shai_profile"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/advisor_profile"
+        app:layout_constraintTop_toBottomOf="@+id/com16_profile" />
+
+
+    <!-- Status: -->
+    <TextView
+        android:id="@+id/status_profile"
+        android:layout_width="45dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/status_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advisor_profile" />
+
+    <!-- Studying -->
+    <TextView
+        android:id="@+id/studying_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="16dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/studying_profile"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/status_profile"
+        app:layout_constraintTop_toBottomOf="@+id/nurlan_shai_profile" />
+
+    <!-- Balance: -->
+    <TextView
+        android:id="@+id/balance_profile"
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/balance_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status_profile" />
+
+
+    <!-- 0 USD -->
+    <TextView
+        android:id="@+id/usd_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="16dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/usd_profile"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/balance_profile"
+        app:layout_constraintTop_toBottomOf="@+id/studying_profile" />
+
+
+    <!-- Grant Type: -->
+    <TextView
+        android:id="@+id/grant_type_"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/grant_type_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balance_profile" />
+
+    <!-- Not available -->
+    <TextView
+        android:id="@+id/not_availab_profile"
+        android:layout_width="144dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="15dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/not_availab_profile"
+        android:textAppearance="@style/info_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toEndOf="@+id/grant_type_"
+        app:layout_constraintTop_toBottomOf="@+id/usd_profile" />
+
+
+    <!-- Email: -->
+    <TextView
+        android:id="@+id/email_profile"
+        android:layout_width="39dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/email_profile"
+        android:textAppearance="@style/label_profile"
+        android:translationY="-1.8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grant_type_" />
+
+    <!-- akzholtoi.kanimetova@iaau.edu.kg -->
+    <TextView
+        android:id="@+id/kalzira_s_email_profile"
+        android:layout_width="208dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginLeft="79dp"
+        android:layout_marginTop="20dp"
+        android:fontFeatureSettings="pnum, lnum"
+        android:gravity="top"
+        android:lineSpacingExtra="6sp"
+        android:text="@string/kalzira_s_email_profile"
+        android:textAppearance="@style/info_profile"
+        android:textSize="12sp"
+        android:translationY="-2.97sp"
+        app:layout_constraintStart_toEndOf="@+id/email_profile"
+        app:layout_constraintTop_toBottomOf="@+id/not_availab_profile" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

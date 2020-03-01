@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingTop="24dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/akzholtoi_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp"
+                android:text="@string/kalzira_s"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/akzholtoi_id"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_marginLeft="16dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="10dp"
+                android:text="@string/some_id" />
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iconProfile"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="35dp"
+            android:gravity="right"
+            android:contentDescription="@string/nav_header_desc"
+            android:src="@drawable/bitmap" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

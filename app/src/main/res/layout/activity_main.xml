@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android-Onboarding -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iphone_8_pl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/iphone_8_pl">
+
+    <!-- logo 1 -->
+
+    <!-- Student Information System -->
+    <View
+        android:id="@+id/logo_1"
+        android:layout_width="297dp"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginRight="63dp"
+        android:background="@drawable/logo_1" />
+
+    <TextView
+        android:id="@+id/student_inf"
+        android:layout_width="290dp"
+        android:layout_height="28dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="467dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginRight="69dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="2sp"
+        android:text="@string/student_inf"
+        android:textAppearance="@style/student_inf"
+        android:translationY="-0.87sp" />
+
+    <Button
+        android:id="@+id/signInBtn_onbrd"
+        android:layout_width="298dp"
+        android:layout_height="42dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="41dp"
+        android:background="@drawable/sign_in_btn_design">
+
+    </Button>
+
+    <!--
+      Font family: SF Pro Display
+      Line height: 28sp
+      (identical to box height)
+      translationY 0.87sp compensates for the line height adjustment of text
+    -->
+
+</RelativeLayout>
+    <!-- Student Information System -->

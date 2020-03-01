@@ -1,0 +1,214 @@
+<resources>
+    <string name="app_name">PMS_AIU</string>
+
+    <string name="student_inf">
+
+Student Information System
+</string>
+
+    <!-- strings.xml -->
+    <string name="label">
+
+Sign in
+</string>
+
+    <!-- strings.xml -->
+    <string name="sign_in">
+
+Sign in
+</string>
+
+    <!-- strings.xml -->
+    <string name="username">
+
+Username
+</string>
+
+
+    <!-- strings.xml -->
+    <string name="label.name">
+
+name.surname
+</string>
+
+
+    <!-- strings.xml -->
+    <string name="label.psw">
+
+ID number
+</string>
+
+    <!-- strings.xml -->
+    <string name="password">
+
+Password
+</string>
+
+    <!--    NavDrawer-->
+
+    <string name="schedule_of">
+
+Schedule of lectures
+</string>
+    <string name="my_grades">
+
+My grades
+</string>
+
+    <string name="transcript">
+
+Transcript
+</string>
+
+    <string name="questionnai">
+
+Questionnaires
+</string>
+
+    <string name="university_">
+
+University mail
+</string>
+
+    <string name="kalzira_s">
+
+Kalzira Sabytakunova
+</string>
+
+
+    <string name="some_id">
+
+17010101382
+</string>
+
+
+    <string name="other_event">
+
+Other events
+</string>
+
+    <!-- strings.xml -->
+    <string name="software_en">
+
+Software engineering \nSeminar
+</string>
+
+    <!-- strings.xml -->
+    <string name="nurlan_shai">
+
+Nurlan Shaidullaev
+</string>
+
+    <string name="time">
+
+11:00-13:00
+</string>
+
+
+    <!-- strings.xml -->
+    <string name="a309">
+
+A309
+</string>
+
+    <string name="oleg_dzhuma">
+
+Oleg Dzhumanaliev
+</string>
+    <string name="study_abroa">
+
+Study abroad \nSeminar
+</string>
+    <string name="tomorrow_15">
+
+Tomorrow\n15:00-17:00
+</string>
+
+    <string name="konya_hall">
+
+Konya Hall
+</string>
+
+    <string name="olga_kan">
+
+Olga Kan
+</string>
+
+    <string name="smm">
+
+SMM
+</string>
+
+
+<!--PROFILE-->
+
+    <string name="name_surnam_profile">
+
+Name Surname:
+</string>
+    <string name="student_id_profile">
+
+Student ID:
+</string>
+
+    <string name="birth_date_profile">
+
+Birth Date:
+</string>
+
+    <string name="bday_profile">
+
+22/11/1998
+</string>
+    <string name="class_profile">
+
+Class:
+</string>
+
+    <string name="com_16_profile">
+
+COM-16
+</string>
+    <string name="advisor_profile">
+
+Advisor:
+</string>
+
+    <string name="nurlan_shai_profile">
+
+Nurlan Shaidullaev
+</string>
+
+    <string name="status_profile">
+
+Status:
+</string>
+
+    <!--PROFILE-->
+
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="data_home">WEDNESDAY 22 JANUARY</string>
+    <string name="today_home">Today</string>
+    <string name="studying_profile">Studying</string>
+    <string name="balance_profile">Balance:</string>
+    <string name="usd_profile">0 USD</string>
+    <string name="grant_type_profile">Grant Type:</string>
+    <string name="not_availab_profile">Not available</string>
+    <string name="email_profile">Email:</string>
+    <string name="kalzira_s_email_profile">kalzira.sabytakunova@iaau.edu.kg</string>
+    <string name="title_profile">Student Information</string>
+
+</resources>
