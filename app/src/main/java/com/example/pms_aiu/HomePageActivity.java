@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class HomePageActivity extends AppCompatActivity {
 
@@ -48,12 +49,12 @@ public class HomePageActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        navigationView.getMenu().getItem(0).setActionView(R.layout.icon_cap);
-        navigationView.getMenu().getItem(1).setActionView(R.layout.icon_calendar);
-        navigationView.getMenu().getItem(2).setActionView(R.layout.icon_marks);
-        navigationView.getMenu().getItem(3).setActionView(R.layout.icon_grade);
-        navigationView.getMenu().getItem(4).setActionView(R.layout.icon_qa);
-        navigationView.getMenu().getItem(5).setActionView(R.layout.icon_mail);
+//        navigationView.getMenu().getItem(0).setActionView(R.layout.icon_cap);
+//        navigationView.getMenu().getItem(1).setActionView(R.layout.icon_calendar);
+//        navigationView.getMenu().getItem(2).setActionView(R.layout.icon_marks);
+//        navigationView.getMenu().getItem(3).setActionView(R.layout.icon_grade);
+//        navigationView.getMenu().getItem(4).setActionView(R.layout.icon_qa);
+//        navigationView.getMenu().getItem(5).setActionView(R.layout.icon_mail);
 
 
         View header = navigationView.getHeaderView(0);

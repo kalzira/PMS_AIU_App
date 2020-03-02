@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Android-Onboarding -->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/iphone_8_pl"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -10,7 +11,8 @@
     <!-- logo 1 -->
 
     <!-- Student Information System -->
-    <View
+
+    <ImageView
         android:id="@+id/logo_1"
         android:layout_width="297dp"
         android:layout_height="300dp"
@@ -19,12 +21,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="63dp"
-        android:layout_marginRight="63dp"
-        android:background="@drawable/logo_1" />
+        android:layout_marginTop="84dp"
+        android:background="@drawable/logo_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/student_inf"
@@ -35,16 +37,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginRight="69dp"
         android:layout_marginBottom="36dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
         android:text="@string/student_inf"
         android:textAppearance="@style/student_inf"
-        android:translationY="-0.87sp" />
+        android:translationY="-0.87sp"
+        app:layout_constraintBottom_toTopOf="@+id/signInBtn_onbrd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/signInBtn_onbrd"
@@ -55,12 +57,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="53dp"
-        android:layout_marginLeft="53dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
         android:layout_marginBottom="42dp"
-        android:background="@drawable/sign_in_btn_design">
+        android:background="@drawable/sign_in_btn_design"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
     </Button>
 
@@ -71,5 +73,5 @@
       translationY 0.87sp compensates for the line height adjustment of text
     -->
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
     <!-- Student Information System -->

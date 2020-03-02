@@ -8,15 +8,20 @@
         <item
             android:id="@+id/nav_studentInf"
             android:title="@string/student_inf"
+            android:icon="@drawable/cap"
             />
             <item
                 android:id="@+id/nav_schOfLectures"
+                android:icon="@drawable/calendar"
                 android:title="@string/schedule_of" />
             <item
                 android:id="@+id/nav_myGrades"
+                android:icon="@drawable/marks"
                 android:title="@string/my_grades" />
             <item
                 android:id="@+id/nav_transcript"
+
+                android:icon="@drawable/grade"
                 android:title="@string/transcript" />
 
     </group>
@@ -26,9 +31,11 @@
         android:checkableBehavior="none">
         <item
             android:id="@+id/nav_qa"
-            android:title="@string/questionnai" />
+            android:title="@string/questionnai"
+            android:icon="@drawable/qa"/>
         <item
             android:id="@+id/nav_mail"
+            android:icon="@drawable/mail"
             android:title="@string/university_" />
 
     </group>
