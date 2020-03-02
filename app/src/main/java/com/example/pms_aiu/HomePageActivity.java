@@ -34,8 +34,8 @@ public class HomePageActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_profile);
         setSupportActionBar(toolbar);
 
-        toolbar.setNavigationIcon(R.drawable.bitmap);
-        toolbar.setTitle(null);
+//        toolbar.setNavigationIcon(R.drawable.bitmap);
+//        toolbar.setTitle(null);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
