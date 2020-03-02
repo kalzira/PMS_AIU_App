@@ -86,7 +86,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if(position!=0){
             holder.today_home.setVisibility(View.GONE);
             holder.date_home.setVisibility(View.GONE);
-            holder.other_event.setVisibility(View.INVISIBLE);
+            holder.other_event.setVisibility(View.GONE);
         }
         if(position==0){
             holder.other_event.setVisibility(View.VISIBLE);
