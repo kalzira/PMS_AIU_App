@@ -38,6 +38,13 @@
             android:icon="@drawable/mail"
             android:title="@string/university_" />
 
+        <item
+            android:id="@+id/nav_contacts"
+            android:title="@string/contacts" />
+        <item
+            android:id="@+id/nav_signOut"
+            android:icon="@drawable/sign_out"
+            android:title="@string/signOut" />
     </group>
 
 
