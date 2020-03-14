@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -60,35 +61,31 @@ public class HomePageActivity extends AppCompatActivity {
 //        navigationView.getMenu().getItem(5).setActionView(R.layout.icon_mail);
 
 
-        View header = navigationView.getHeaderView(0);
-        ImageView mImgView=  header.findViewById(R.id.iconProfile);
-
-        mImgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent profileActivity = new Intent(HomePageActivity.this, ProfileActivity.class);
-                startActivity(profileActivity);
-
-            }
-        });
-
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.nav_signOut:
-                        Intent profileActivity = new Intent(HomePageActivity.this, SignInActivity.class);
-                        startActivity(profileActivity);
+                        Intent signOutIntent = new Intent(HomePageActivity.this, SignInActivity.class);
+                        finish();
+                        startActivity(signOutIntent);
+
                         //Do some thing here
                         // add navigation drawer item onclick method here
                         break;
                     case R.id.nav_contacts:
                         String url = "http://www.iaau.edu.kg/view/public/pages/page.xhtml;jsessionid=gl2CjdudoObLpX_mGm8McmCuRPgNqDA6EyfwZPep.unknown-host?id=153";
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
+                        Intent contactsIntent = new Intent(Intent.ACTION_VIEW);
+                        contactsIntent.setData(Uri.parse(url));
+                        startActivity(contactsIntent);
                         break;
+
+                    case R.id.nav_studentInf:
+                       Intent profileIntent = new Intent(HomePageActivity.this, ProfileActivity.class);
+                       startActivity(profileIntent);
+                       break;
+
                 }
                 return false;
             }

@@ -29,7 +29,8 @@ public class SignInActivity extends AppCompatActivity {
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent welcomeIntent = new Intent(SignInActivity.this, MainActivity.class);
+                startActivity(welcomeIntent);
             }
         });
     }

@@ -8,22 +8,19 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pms_aiu.ItemHomeModel;
-import com.example.pms_aiu.MainActivity;
 import com.example.pms_aiu.NewsDetailsActivity;
 import com.example.pms_aiu.R;
 import com.example.pms_aiu.RecyclerViewAdapter;
-import com.example.pms_aiu.SignInActivity;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private NewsViewModel newsViewModel;
 
     private RecyclerView mRecyclerView;
     private RecyclerViewAdapter mAdapter;
@@ -32,8 +29,8 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        homeViewModel =
-//                ViewModelProviders.of(this).get(HomeViewModel.class);
+//        newsViewModel =
+//                ViewModelProviders.of(this).get(NewsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
 
