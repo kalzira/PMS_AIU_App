@@ -1,10 +1,12 @@
-package com.example.pms_aiu;
+package com.example.pms_aiu.navMenu.news;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.pms_aiu.R;
 
 public class NewsDetailsActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.pms_aiu.ui.home;
+package com.example.pms_aiu.navMenu.news;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,16 +11,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pms_aiu.ItemHomeModel;
-import com.example.pms_aiu.NewsDetailsActivity;
 import com.example.pms_aiu.R;
-import com.example.pms_aiu.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 
 public class NewsFragment extends Fragment {
 
-    private NewsViewModel newsViewModel;
+
 
     private RecyclerView mRecyclerView;
     private RecyclerViewAdapter mAdapter;
@@ -29,8 +26,7 @@ public class NewsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        newsViewModel =
-//                ViewModelProviders.of(this).get(NewsViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
 

@@ -1,19 +1,20 @@
 package com.example.pms_aiu;
 
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
 
+import com.example.pms_aiu.navMenu.grades.MyGradesFragment;
+import com.example.pms_aiu.navMenu.news.NewsFragment;
+import com.example.pms_aiu.navMenu.stInfo.StInfoFragment;
+import com.example.pms_aiu.navMenu.transcript.TranscriptFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -21,88 +22,106 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.Menu;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+public class HomePageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-public class HomePageActivity extends AppCompatActivity {
 
-    private Button iconProfileBtn;
-    private AppBarConfiguration mAppBarConfiguration;
+    private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        Toolbar toolbar = findViewById(R.id.toolbar_profile);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
-//        toolbar.setNavigationIcon(R.drawable.bitmap);
-//        toolbar.setTitle(null);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+
+        drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_studentInf, R.id.nav_schOfLectures, R.id.nav_myGrades,
-                R.id.nav_transcript, R.id.nav_qa, R.id.nav_mail)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-//        navigationView.getMenu().getItem(0).setActionView(R.layout.icon_cap);
-//        navigationView.getMenu().getItem(1).setActionView(R.layout.icon_calendar);
-//        navigationView.getMenu().getItem(2).setActionView(R.layout.icon_marks);
-//        navigationView.getMenu().getItem(3).setActionView(R.layout.icon_grade);
-//        navigationView.getMenu().getItem(4).setActionView(R.layout.icon_qa);
-//        navigationView.getMenu().getItem(5).setActionView(R.layout.icon_mail);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        if(savedInstanceState==null) {
 
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-                switch (id) {
-                    case R.id.nav_signOut:
-                        Intent signOutIntent = new Intent(HomePageActivity.this, SignInActivity.class);
-                        finish();
-                        startActivity(signOutIntent);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new NewsFragment()).commit();
 
-                        //Do some thing here
-                        // add navigation drawer item onclick method here
-                        break;
-                    case R.id.nav_contacts:
-                        String url = "http://www.iaau.edu.kg/view/public/pages/page.xhtml;jsessionid=gl2CjdudoObLpX_mGm8McmCuRPgNqDA6EyfwZPep.unknown-host?id=153";
-                        Intent contactsIntent = new Intent(Intent.ACTION_VIEW);
-                        contactsIntent.setData(Uri.parse(url));
-                        startActivity(contactsIntent);
-                        break;
-
-                    case R.id.nav_studentInf:
-                       Intent profileIntent = new Intent(HomePageActivity.this, ProfileActivity.class);
-                       startActivity(profileIntent);
-                       break;
-
-                }
-                return false;
-            }
-        });
+        }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home_page, menu);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+
+            case R.id.nav_studentInf:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new StInfoFragment()).commit();
+                    break;
+
+            case R.id.nav_schOfLectures:
+                String urlSch = "http://com.iaau.edu.kg/calendar/schedule-of-lectures.html";
+                Intent schLecIntent = new Intent(Intent.ACTION_VIEW);
+                schLecIntent.setData(Uri.parse(urlSch));
+                startActivity(schLecIntent);
+                break;
+                case R.id.nav_myGrades:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new MyGradesFragment()).commit();
+                    break;
+
+            case R.id.nav_transcript:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new TranscriptFragment()).commit();
+                break;
+
+//            case R.id.nav_qa:
+
+
+            case R.id.nav_mail:
+                String urlMail = "https://mail.google.com/mail/u/";
+                Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                mailIntent.setData(Uri.parse(urlMail));
+                startActivity(mailIntent);
+                break;
+
+            case R.id.nav_contacts:
+                String urlContacts = "http://www.iaau.edu.kg/view/public/pages/page.xhtml;jsessionid=gl2CjdudoObLpX_mGm8McmCuRPgNqDA6EyfwZPep.unknown-host?id=153";
+                Intent contactsIntent = new Intent(Intent.ACTION_VIEW);
+                contactsIntent.setData(Uri.parse(urlContacts));
+                startActivity(contactsIntent);
+                break;
+
+            case R.id.nav_signOut:
+                Intent signOutIntent = new Intent(HomePageActivity.this, SignInActivity.class);
+                finish();
+                startActivity(signOutIntent);
+                break;
+
+
+
+
+
+
+        }
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+        super.onBackPressed();}
     }
+
+
 }
