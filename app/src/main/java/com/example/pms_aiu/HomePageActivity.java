@@ -100,7 +100,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                 break;
 
             case R.id.nav_signOut:
-                Intent signOutIntent = new Intent(HomePageActivity.this, SignInActivity.class);
+                Intent signOutIntent = new Intent(HomePageActivity.this, SignUpActivity.class);
                 finish();
                 startActivity(signOutIntent);
                 break;

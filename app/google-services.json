@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1007833211769",
+    "firebase_url": "https://pmsaiu-1b655.firebaseio.com",
+    "project_id": "pmsaiu-1b655",
+    "storage_bucket": "pmsaiu-1b655.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007833211769:android:9811d7b722dbfe981bc5a8",
+        "android_client_info": {
+          "package_name": "com.example.pmsaiu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007833211769-qhic7mlo1apkgug4h0f5lrmd363trbuf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pmsaiu",
+            "certificate_hash": "2754e3d5ace0fa362312cd5b5852dedb85b620c0"
+          }
+        },
+        {
+          "client_id": "1007833211769-b0l4pffvp6g4hdna32avv9g2c4gr0mfr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjpo7VHE3osMS1FndXm17WRnaIaSE6gOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007833211769-b0l4pffvp6g4hdna32avv9g2c4gr0mfr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

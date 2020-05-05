@@ -18,25 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextAppearance="@style/TitleText">
 
-        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            tools:layout_editor_absoluteX="16dp"-->
-        <!--            tools:layout_editor_absoluteY="11dp">-->
-
-        <!--            <Button-->
-        <!--                android:id="@+id/arrowBack_profile"-->
-        <!--                android:layout_width="12dp"-->
-        <!--                android:layout_height="20dp"-->
-        <!--                android:layout_marginBottom="12dp"-->
-        <!--                android:background="@drawable/arrow"-->
-        <!--                android:paddingStart="9dp"-->
-        <!--                android:paddingLeft="9dp"-->
-        <!--                android:paddingTop="12dp"-->
-        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--                app:layout_constraintStart_toStartOf="parent">-->
-
-        <!--            </Button>-->
 
         <TextView
             android:id="@+id/title"
@@ -52,7 +33,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
     </androidx.appcompat.widget.Toolbar>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PMS_AIU</string>
+    <string name="app_name">PmsAIU</string>
 
     <string name="student_inf">
 
@@ -21,27 +21,27 @@ Sign in
     <!-- strings.xml -->
     <string name="username">
 
-Username
+Name
 </string>
 
 
     <!-- strings.xml -->
     <string name="label.name">
 
-name.surname
+Name
 </string>
 
 
     <!-- strings.xml -->
-    <string name="label.psw">
+    <string name="label.sname">
 
-ID number
+Surname
 </string>
 
     <!-- strings.xml -->
-    <string name="password">
+    <string name="Surname">
 
-Password
+Surname
 </string>
 
     <!--    NavDrawer-->
@@ -192,7 +192,7 @@ Status:
     <string name="today">Today</string>
 
 
-    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="title_activity_home_page"> </string>
 
     <!--    NEWS DETAIL-->
 
@@ -213,11 +213,7 @@ Reprehenderit non irure dolore ullamco aute. Enim dolor ipsum quis tempor dolor 
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+
     <string name="data_home">WEDNESDAY 22 JANUARY</string>
     <string name="today_home">Today</string>
     <string name="studying_profile">Studying</string>
@@ -230,6 +226,23 @@ Reprehenderit non irure dolore ullamco aute. Enim dolor ipsum quis tempor dolor 
     <string name="title_profile">Student Information</string>
     <string name="signOut">Sign Out</string>
     <string name="contacts">Contact</string>
+    <string name="title_grades">My Grades</string>
+    <string-array name="yearAndTerm">
+        <item>2016-2017 1.Term</item>
+        <item>2016-2017 1.Term</item>
+        <item>2016-2017 1.Term</item>
+        <item>2016-2017 1.Term</item>
+        <item>2016-2017 1.Term</item>
+    </string-array>
+    <string-array name="faculties">
+        <item>Faculty of Engineering and Informatics</item>
+        <item>Faculty of Social Sciences</item>
+        <item>Faculty of Economics and Administrative Sciences</item>
+        <item>Faculty of Medicine</item>
+        <item>Vocational education</item>
+        <item>Distance Learning Center</item>
+        <item>Institute of Languages</item>
+    </string-array>
 
 
 </resources>

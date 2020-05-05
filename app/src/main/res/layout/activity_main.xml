@@ -28,28 +28,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/student_inf"
         android:layout_width="290dp"
         android:layout_height="28dp"
-        android:layout_above="@+id/signInBtn_onbrd"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal|top"
         android:lineSpacingExtra="2sp"
         android:text="@string/student_inf"
         android:textAppearance="@style/student_inf"
         android:translationY="-0.87sp"
-        app:layout_constraintBottom_toTopOf="@+id/signInBtn_onbrd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_1" />
+
+    <TextView
+        android:id="@+id/loginGuestBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Or Login as a guest"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        android:textColorLink="@color/colorAccent"
+        android:textAppearance="@style/title_registr_btn"
+        android:textColor="@color/colorPrimary"
+        android:textFontWeight="@android:integer/config_mediumAnimTime"
+        app:layout_constraintTop_toBottomOf="@+id/signUpBtn_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+
     <Button
-        android:id="@+id/signInBtn_onbrd"
+        android:id="@+id/signUpBtn_main"
         android:layout_width="298dp"
         android:layout_height="42dp"
         android:layout_alignParentStart="true"
@@ -57,11 +75,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="42dp"
-        android:background="@drawable/sign_in_btn_design"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/btn_registr_bg"
+        android:text="Sign Up"
+        android:textAppearance="@style/title_registr_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent">
 
     </Button>

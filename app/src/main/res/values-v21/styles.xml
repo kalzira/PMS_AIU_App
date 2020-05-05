@@ -410,4 +410,18 @@
         <item name="android:layout_marginTop">12dp</item>
         <item name="android:layout_marginBottom">10dp</item>
     </style>
+
+    <style name="title_registr_btn">
+        <item name="android:textSize">
+            17sp
+        </item>
+
+        <item name="android:letterSpacing">
+            -0.02
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+    </style>
 </resources>
