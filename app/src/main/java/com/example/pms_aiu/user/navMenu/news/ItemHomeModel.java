@@ -1,4 +1,4 @@
-package com.example.pms_aiu.navMenu.news;
+package com.example.pms_aiu.user.navMenu.news;
 
 public class ItemHomeModel {
     private int mHomeImage, mMapImage;

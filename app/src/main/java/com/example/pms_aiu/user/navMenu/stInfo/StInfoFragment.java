@@ -1,4 +1,4 @@
-package com.example.pms_aiu.navMenu.stInfo;
+package com.example.pms_aiu.user.navMenu.stInfo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-import com.example.pms_aiu.HomePageActivity;
+import com.example.pms_aiu.user.HomePageUsersActivity;
 import com.example.pms_aiu.R;
 
 public class StInfoFragment extends Fragment {
@@ -30,7 +30,7 @@ public class StInfoFragment extends Fragment {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), HomePageActivity.class));
+                startActivity(new Intent(getContext(), HomePageUsersActivity.class));
             }
         });
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();

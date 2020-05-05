@@ -4,6 +4,180 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pms_aiu.LoginActivity">
+    tools:context=".SignUpActivity">
+
+
+    <!-- close -->
+    <Button
+        android:id="@+id/closeBtn"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/title_sign_in"
+        android:layout_width="310.53dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="40dp"
+        android:gravity="top"
+        android:lineSpacingExtra="1sp"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textAppearance="@style/sign_in"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/signInBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_sign_in">
+
+
+        <LinearLayout
+            android:id="@+id/signInForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="80dp">
+
+            <!--        EMAIL-->
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="Email"
+                android:textAppearance="@style/username">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:alpha="0.95"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="Enter your Email"
+                android:inputType="textEmailAddress"
+                android:lineSpacingExtra="2sp"
+                android:text="sabytakunovakalzira@gmail.com"
+                android:textAppearance="@style/label.name"
+                android:translationY="-0.86sp" />
+
+            <View
+                android:id="@+id/bottom_line_email"
+                android:layout_width="321dp"
+                android:layout_height="2dp"
+                android:background="@drawable/bottom_line" />
+
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="25dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="Password"
+                android:textAppearance="@style/username">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/etPsw"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottom_line_email"
+                android:layout_marginTop="13dp"
+                android:alpha="0.95"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="Password of e-mail"
+                android:inputType="numberPassword"
+                android:lineSpacingExtra="2sp"
+                android:maxLength="11"
+                android:text="77359812345"
+                android:textAppearance="@style/label.name"
+                android:translationY="-0.86sp">
+
+            </EditText>
+
+
+            <View
+                android:id="@+id/bottom_line_psw"
+                android:layout_width="321dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/etLastName"
+                android:background="@drawable/bottom_line" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/verify_email_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Verify E-mail"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/signInBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/signInBtn"
+        android:layout_width="298dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_registr_bg"
+        android:text="Sign In"
+        android:textAppearance="@style/title_registr_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </Button>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

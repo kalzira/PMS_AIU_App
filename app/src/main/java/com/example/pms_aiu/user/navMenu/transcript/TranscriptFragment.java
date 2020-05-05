@@ -1,4 +1,4 @@
-package com.example.pms_aiu.navMenu.transcript;
+package com.example.pms_aiu.user.navMenu.transcript;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

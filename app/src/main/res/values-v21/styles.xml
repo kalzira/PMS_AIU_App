@@ -65,7 +65,7 @@
     <style name="username">
 
         <item name="android:textSize">
-            22sp
+            17sp
         </item>
 
         <item name="android:letterSpacing">
@@ -82,7 +82,7 @@
     <style name="label.name">
 
         <item name="android:textSize">
-            17sp
+            13sp
         </item>
 
         <item name="android:letterSpacing">

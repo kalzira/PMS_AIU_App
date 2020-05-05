@@ -1,4 +1,4 @@
-package com.example.pms_aiu;
+package com.example.pms_aiu.user;
 
 
 import android.content.Intent;
@@ -11,10 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 
-import com.example.pms_aiu.navMenu.grades.MyGradesFragment;
-import com.example.pms_aiu.navMenu.news.NewsFragment;
-import com.example.pms_aiu.navMenu.stInfo.StInfoFragment;
-import com.example.pms_aiu.navMenu.transcript.TranscriptFragment;
+import com.example.pms_aiu.R;
+import com.example.pms_aiu.SignUpActivity;
+import com.example.pms_aiu.user.navMenu.grades.MyGradesFragment;
+import com.example.pms_aiu.user.navMenu.news.NewsFragment;
+import com.example.pms_aiu.user.navMenu.stInfo.StInfoFragment;
+import com.example.pms_aiu.user.navMenu.transcript.TranscriptFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -22,7 +24,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class HomePageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class HomePageUsersActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
     private DrawerLayout drawer;
@@ -100,7 +102,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                 break;
 
             case R.id.nav_signOut:
-                Intent signOutIntent = new Intent(HomePageActivity.this, SignUpActivity.class);
+                Intent signOutIntent = new Intent(HomePageUsersActivity.this, SignUpActivity.class);
                 finish();
                 startActivity(signOutIntent);
                 break;

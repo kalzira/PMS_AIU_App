@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".navMenu.news.NewsDetailsActivity" />
+        <activity android:name=".user.navMenu.news.NewsDetailsActivity" />
         <activity
-            android:name=".HomePageActivity"
+            android:name=".user.HomePageUsersActivity"
             android:label="@string/title_activity_home_page"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignUpActivity" />

@@ -1,4 +1,4 @@
-package com.example.pms_aiu.navMenu.news;
+package com.example.pms_aiu.user.navMenu.news;
 
 import android.view.LayoutInflater;
 import android.view.View;

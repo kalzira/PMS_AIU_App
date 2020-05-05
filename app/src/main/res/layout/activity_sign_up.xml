@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,287 +24,308 @@
         android:id="@+id/title_sign_up"
         android:layout_width="310.53dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="40dp"
         android:gravity="top"
         android:lineSpacingExtra="1sp"
         android:text="Sign Up"
         android:textAlignment="center"
         android:textAppearance="@style/sign_in"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--NAME-->
-    <!--    <TextView-->
-    <!--        android:id="@+id/username"-->
-    <!--        android:layout_width="292dp"-->
-    <!--        android:layout_height="27dp"-->
-    <!--        android:layout_below="@+id/sign_in"-->
-    <!--        android:layout_marginLeft="23dp"-->
-    <!--        android:layout_marginTop="30dp"-->
-    <!--        android:gravity="top"-->
-    <!--        android:lineSpacingExtra="2sp"-->
-    <!--        android:text="@string/username"-->
-    <!--        android:textAppearance="@style/username"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/sign_in" />-->
-
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="292dp"
+    <FrameLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title_sign_up"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="30dp"
-        android:alpha="0.54"
-        android:background="@null"
-        android:gravity="top"
-        android:hint="@string/label.name"
-        android:inputType="text"
-        android:lineSpacingExtra="2sp"
-        android:maxLength="100"
-        android:textAppearance="@style/label.name"
-        android:translationY="-0.86sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_sign_up" />
-
-    <View
-        android:id="@+id/bottom_line_name"
-        android:layout_width="321dp"
-        android:layout_height="2dp"
-        android:layout_below="@+id/etName"
-        android:layout_marginLeft="23dp"
-        android:background="@drawable/bottom_line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etName" />
-
-    <!--SURNAME-->
-    <!--    <TextView-->
-    <!--        android:id="@+id/surname"-->
-    <!--        android:layout_width="292dp"-->
-    <!--        android:layout_height="27dp"-->
-    <!--        android:layout_below="@+id/sign_in"-->
-    <!--        android:layout_marginLeft="23dp"-->
-    <!--        android:layout_marginTop="14dp"-->
-    <!--        android:gravity="top"-->
-    <!--        android:lineSpacingExtra="2sp"-->
-    <!--        android:text="@string/Surname"-->
-    <!--        android:textAppearance="@style/username"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/bottom_line_name" />-->
-
-    <EditText
-        android:id="@+id/etSurname"
-        android:layout_width="292dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bottom_line_name"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="30dp"
-        android:alpha="0.54"
-        android:background="@null"
-        android:gravity="top"
-        android:hint="@string/label.sname"
-        android:inputType="text"
-        android:lineSpacingExtra="2sp"
-        android:maxLength="100"
-        android:textAppearance="@style/label.name"
-        android:translationY="-0.86sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom_line_name" />
-
-    <View
-        android:id="@+id/bottom_line_sname"
-        android:layout_width="321dp"
-        android:layout_height="2dp"
-        android:layout_below="@+id/etSurname"
-        android:layout_marginLeft="23dp"
-        android:background="@drawable/bottom_line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSurname" />
+        app:layout_constraintTop_toBottomOf="@+id/title_sign_up">
 
 
-    <!--EMAIL-->
+        <LinearLayout
+            android:id="@+id/signUpForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="80dp"
+            >
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/email"-->
-    <!--        android:layout_width="292dp"-->
-    <!--        android:layout_height="27dp"-->
-    <!--        android:layout_below="@+id/sign_in"-->
-    <!--        android:layout_marginLeft="23dp"-->
-    <!--        android:layout_marginTop="14dp"-->
-    <!--        android:gravity="top"-->
-    <!--        android:lineSpacingExtra="2sp"-->
-    <!--        android:text="Email"-->
-    <!--        android:textAppearance="@style/username"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/bottom_line_sname" />-->
+            <!--    NAME-->
+            <TextView
+                android:id="@+id/fName"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="2sp"
+                android:text="Student Name"
+                android:textAppearance="@style/username" />
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="292dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bottom_line_sname"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="30dp"
-        android:alpha="0.54"
-        android:background="@null"
-        android:gravity="top"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:lineSpacingExtra="2sp"
-        android:textAppearance="@style/label.name"
-        android:translationY="-0.86sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom_line_sname" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-    <View
-        android:id="@+id/bottom_line_email"
-        android:layout_width="321dp"
-        android:layout_height="2dp"
-        android:layout_below="@+id/etSurname"
-        android:layout_marginLeft="23dp"
-        android:background="@drawable/bottom_line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:paddingRight="15dp">
 
-    <!--ID-->
-    <!--    <TextView-->
-    <!--        android:id="@+id/id"-->
-    <!--        android:layout_width="292dp"-->
-    <!--        android:layout_height="27dp"-->
-    <!--        android:layout_below="@+id/sign_in"-->
-    <!--        android:layout_marginLeft="23dp"-->
-    <!--        android:layout_marginTop="14dp"-->
-    <!--        android:gravity="top"-->
-    <!--        android:lineSpacingExtra="2sp"-->
-    <!--        android:text="ID"-->
-    <!--        android:textAppearance="@style/username"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/bottom_line_email" />-->
+                    <EditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="0.5"
+                        android:alpha="0.95"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="First Name"
+                        android:inputType="text"
+                        android:text="Kkk"
+                        android:lineSpacingExtra="2sp"
+                        android:maxLength="100"
+                        android:textAppearance="@style/label.name"
+                        android:translationY="-0.86sp" />
 
-    <EditText
-        android:id="@+id/etId"
-        android:layout_width="292dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bottom_line_email"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="30dp"
-        android:alpha="0.54"
-        android:background="@null"
-        android:gravity="top"
-        android:hint="Enter your ID"
-        android:inputType="numberPassword"
-        android:lineSpacingExtra="2sp"
-        android:maxLength="11"
-        android:textAppearance="@style/label.name"
-        android:translationY="-0.86sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom_line_email" />
+                    <View
+                        android:id="@+id/bottom_line_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bottom_line" />
+                </LinearLayout>
 
-    <View
-        android:id="@+id/bottom_line_id"
-        android:layout_width="321dp"
-        android:layout_height="2dp"
-        android:layout_below="@+id/etSurname"
-        android:layout_marginLeft="23dp"
-        android:background="@drawable/bottom_line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etId" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
 
-    <!--    PHONE-->
+                    <EditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bottom_line_name"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.95"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="Last Name"
+                        android:text="Sss"
+                        android:inputType="text"
+                        android:lineSpacingExtra="2sp"
+                        android:maxLength="100"
+                        android:textAppearance="@style/label.name"
+                        android:translationY="-0.86sp" />
 
-    <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="292dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bottom_line_id"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="30dp"
-        android:alpha="0.54"
-        android:background="@null"
-        android:gravity="top"
-        android:hint="Enter your phone number"
-        android:inputType="phone"
-        android:lineSpacingExtra="2sp"
-        android:textAppearance="@style/label.name"
-        android:translationY="-0.86sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom_line_id" />
+                    <View
+                        android:id="@+id/bottom_line_sname"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/bottom_line" />
+                </LinearLayout>
 
-    <View
-        android:id="@+id/bottom_line_phone"
-        android:layout_width="321dp"
-        android:layout_height="2dp"
-        android:layout_below="@+id/etSurname"
-        android:layout_marginLeft="23dp"
-        android:background="@drawable/bottom_line"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone" />
+            </LinearLayout>
 
-    <!--FACULTY-->
-    <TextView
-        android:id="@+id/faculty"
-        android:layout_width="292dp"
-        android:layout_height="27dp"
-        android:layout_below="@+id/bottom_line_phone"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="15dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:text="Faculty"
-        android:textAppearance="@style/label.name"
-        android:textColor="@android:color/black"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottom_line_phone" />
+            <!--        ID-->
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="Student ID"
+                android:textAppearance="@style/username" />
 
-    <Spinner
-        android:id="@+id/spinner_faculty"
-        android:layout_width="289dp"
-        android:layout_height="36dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/faculty">
 
-    </Spinner>
+            <EditText
+                android:id="@+id/etID"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id"
+                android:layout_marginTop="4dp"
+                android:alpha="0.95"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="ID"
+                android:text="1234567"
+                android:inputType="text"
+                android:lineSpacingExtra="2sp"
+                android:maxLength="100"
+                android:textAppearance="@style/label.name"
+                android:translationY="-0.86sp" />
 
-    <!--DEPARTMENT-->
-    <TextView
-        android:id="@+id/department"
-        android:layout_width="292dp"
-        android:layout_height="27dp"
-        android:layout_below="@+id/spinner_faculty"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="15dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:text="Department"
-        android:textAppearance="@style/label.name"
-        android:textColor="@android:color/black"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_faculty" />
+            <View
+                android:id="@+id/bottom_line_id"
+                android:layout_width="321dp"
+                android:layout_height="2dp"
+                android:background="@drawable/bottom_line" />
 
-    <Spinner
-        android:id="@+id/spinner_department"
-        android:layout_width="289dp"
-        android:layout_height="36dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/department">
+            <!--        EMAIL AND PASSWORD-->
 
-    </Spinner>
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="Email and Password"
+                android:textAppearance="@style/username">
+
+            </TextView>
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="292dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.95"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="Enter your Email"
+                        android:text="sabytakunovakalzira@gmail.com"
+                        android:inputType="textEmailAddress"
+                        android:lineSpacingExtra="2sp"
+                        android:textAppearance="@style/label.name"
+                        android:translationY="-0.86sp" />
+
+                    <View
+                        android:id="@+id/bottom_line_email"
+                        android:layout_width="321dp"
+                        android:layout_height="2dp"
+                        android:background="@drawable/bottom_line" />
+
+
+
+                    <EditText
+                        android:id="@+id/etPsw"
+                        android:layout_width="292dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bottom_line_email"
+                        android:layout_marginTop="13dp"
+                        android:alpha="0.95"
+                        android:background="@null"
+                        android:gravity="top"
+                        android:hint="Password of e-mail"
+                        android:inputType="numberPassword"
+                        android:lineSpacingExtra="2sp"
+                        android:text="77359812345"
+                        android:maxLength="11"
+                        android:textAppearance="@style/label.name"
+                        android:translationY="-0.86sp">
+
+                    </EditText>
+
+                    <View
+                        android:id="@+id/bottom_line_psw"
+                        android:layout_width="321dp"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/etLastName"
+                        android:background="@drawable/bottom_line" />
+
+            <!--    PHONE-->
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="Phone"
+                android:textAppearance="@style/username">
+
+            </TextView>
+
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottom_line_id"
+                android:layout_marginTop="4dp"
+                android:alpha="0.95"
+                android:background="@null"
+                android:gravity="top"
+                android:text="0707202020"
+                android:hint="Enter your phone number"
+                android:inputType="phone"
+                android:lineSpacingExtra="2sp"
+                android:textAppearance="@style/label.name"
+                android:translationY="-0.86sp" />
+
+            <View
+                android:id="@+id/bottom_line_phone"
+                android:layout_width="321dp"
+                android:layout_height="2dp"
+                android:background="@drawable/bottom_line" />
+
+            <!--FACULTY-->
+            <TextView
+                android:id="@+id/faculty"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="Faculty"
+                android:textAppearance="@style/label.name"
+                android:textColor="@android:color/black"
+                android:textSize="17sp" />
+
+            <Spinner
+                android:id="@+id/spinner_faculty"
+                android:layout_width="289dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+            </Spinner>
+
+            <!--DEPARTMENT-->
+            <TextView
+                android:id="@+id/department"
+                android:layout_width="292dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="15dp"
+                android:gravity="top"
+                android:lineSpacingExtra="2sp"
+                android:text="Department"
+                android:textAppearance="@style/label.name"
+                android:textColor="@android:color/black"
+                android:textSize="17sp" />
+
+            <Spinner
+                android:id="@+id/spinner_department"
+                android:layout_width="289dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+            </Spinner>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="15dp"
         android:orientation="vertical"
-        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -314,7 +336,8 @@
             android:layout_height="42dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/btn_registr_bg"
-            android:text="SIGN UP">
+            android:text="Sign Up"
+            android:textAppearance="@style/title_registr_btn">
 
         </Button>
 
@@ -322,9 +345,12 @@
             android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HAVE AN ACCOUNT? LOGIN"
+            android:textSize="16sp"
+            android:textAppearance="@style/title_registr_btn"
+            android:text="Have an account? Login"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary">
+            android:textColor="@color/colorPrimary"
+            android:textColorLink="@color/colorAccent">
 
         </TextView>
 
@@ -337,10 +363,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

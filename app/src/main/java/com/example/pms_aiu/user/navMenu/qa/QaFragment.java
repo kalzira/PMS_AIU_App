@@ -1,4 +1,4 @@
-package com.example.pms_aiu.navMenu.qa;
+package com.example.pms_aiu.user.navMenu.qa;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

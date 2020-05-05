@@ -234,15 +234,5 @@ Reprehenderit non irure dolore ullamco aute. Enim dolor ipsum quis tempor dolor 
         <item>2016-2017 1.Term</item>
         <item>2016-2017 1.Term</item>
     </string-array>
-    <string-array name="faculties">
-        <item>Faculty of Engineering and Informatics</item>
-        <item>Faculty of Social Sciences</item>
-        <item>Faculty of Economics and Administrative Sciences</item>
-        <item>Faculty of Medicine</item>
-        <item>Vocational education</item>
-        <item>Distance Learning Center</item>
-        <item>Institute of Languages</item>
-    </string-array>
-
 
 </resources>
