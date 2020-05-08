@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.pms_aiu.user.HomePageUsersActivity;
+import com.example.pms_aiu.User.HomePageUsersActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,10 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.loginGuestBtn:
                 Intent signInActivity = new Intent(MainActivity.this, HomePageUsersActivity.class);
                 startActivity(signInActivity);
+                finish();
                 break;
             case R.id.signUpBtn_main:
                 Intent signUpActivity = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(signUpActivity);
+                finish();
                 break;
 
         }

@@ -10,12 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pms_aiu.user.HomePageUsersActivity;
-import com.google.android.gms.common.SignInButton;
+import com.example.pms_aiu.Models.User;
+import com.example.pms_aiu.User.HomePageUsersActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -81,7 +80,10 @@ public class LoginActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
                             if (firebaseAuth.getCurrentUser().isEmailVerified()){
-                                    startActivity(new Intent(LoginActivity.this, HomePageUsersActivity.class));
+
+                                    startActivity(new Intent(LoginActivity.this,
+                                            HomePageUsersActivity.class));
+                                    finish();
                             }else{
                                 mVerifyText.setVisibility(View.VISIBLE);
 

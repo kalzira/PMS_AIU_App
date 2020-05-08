@@ -1,4 +1,4 @@
-package com.example.pms_aiu.user.navMenu.news;
+package com.example.pms_aiu.User.navMenu.news;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             //txt
             speaker_event = itemView.findViewById(R.id.speakerName_event);
             location_event = itemView.findViewById(R.id.location_event);
-            time_event = itemView.findViewById(R.id.time_event);
+            time_event = itemView.findViewById(R.id.stId_profile);
             title_event = itemView.findViewById(R.id.title_event);
             other_event = itemView.findViewById(R.id.other_event);
 

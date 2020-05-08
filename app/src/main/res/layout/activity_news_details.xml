@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.navMenu.news.NewsDetailsActivity">
+    tools:context=".User.navMenu.news.NewsDetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -85,7 +85,7 @@
 
                 <!-- 11:00-13:00 -->
                 <TextView
-                    android:id="@+id/time_event"
+                    android:id="@+id/stId_profile"
                     android:layout_width="80dp"
                     android:layout_height="15dp"
                     android:layout_marginStart="26dp"

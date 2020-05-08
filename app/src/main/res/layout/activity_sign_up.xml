@@ -40,7 +40,10 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="15dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="80dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,9 +56,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="50dp"
-            android:paddingRight="50dp"
-            android:paddingBottom="80dp"
             >
 
             <!--    NAME-->
@@ -195,8 +195,8 @@
                         android:alpha="0.95"
                         android:background="@null"
                         android:gravity="top"
-                        android:hint="Enter your Email"
-                        android:text="sabytakunovakalzira@gmail.com"
+                        android:hint="university email"
+                        android:text="kalzira.sabytakunova@iaau.edu.kg"
                         android:inputType="textEmailAddress"
                         android:lineSpacingExtra="2sp"
                         android:textAppearance="@style/label.name"
@@ -222,7 +222,7 @@
                         android:hint="Password of e-mail"
                         android:inputType="numberPassword"
                         android:lineSpacingExtra="2sp"
-                        android:text="77359812345"
+                        android:text="773598SabZero"
                         android:maxLength="11"
                         android:textAppearance="@style/label.name"
                         android:translationY="-0.86sp">
@@ -272,26 +272,6 @@
                 android:layout_height="2dp"
                 android:background="@drawable/bottom_line" />
 
-            <!--FACULTY-->
-            <TextView
-                android:id="@+id/faculty"
-                android:layout_width="292dp"
-                android:layout_height="27dp"
-                android:layout_marginTop="15dp"
-                android:gravity="top"
-                android:lineSpacingExtra="2sp"
-                android:text="Faculty"
-                android:textAppearance="@style/label.name"
-                android:textColor="@android:color/black"
-                android:textSize="17sp" />
-
-            <Spinner
-                android:id="@+id/spinner_faculty"
-                android:layout_width="289dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
-
-            </Spinner>
 
             <!--DEPARTMENT-->
             <TextView
@@ -306,13 +286,27 @@
                 android:textColor="@android:color/black"
                 android:textSize="17sp" />
 
-            <Spinner
-                android:id="@+id/spinner_department"
-                android:layout_width="289dp"
+            <EditText
+                android:id="@+id/etDepartment"
+                android:layout_width="292dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
+                android:layout_below="@+id/bottom_line_id"
+                android:layout_marginTop="4dp"
+                android:alpha="0.95"
+                android:background="@null"
+                android:gravity="top"
+                android:text="COM-16"
+                android:hint="Enter your department"
+                android:inputType="textCapCharacters"
+                android:lineSpacingExtra="2sp"
+                android:textAppearance="@style/label.name"
+                android:translationY="-0.86sp" />
 
-            </Spinner>
+            <View
+                android:id="@+id/bottom_line_department"
+                android:layout_width="321dp"
+                android:layout_height="2dp"
+                android:background="@drawable/bottom_line" />
 
         </LinearLayout>
     </FrameLayout>

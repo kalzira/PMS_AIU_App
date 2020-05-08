@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_webView"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="40dp">
+<!--        android:background="#EFEFF4"-->
+
+
+                    <TextView
+                        android:id="@+id/title_toolbar_webview"
+                        android:layout_width="172dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:lineSpacingExtra="2sp"
+                        android:text="University Site"
+                        android:textAppearance="@style/title_profile"
+                        android:translationY="-0.86sp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/bottomLine_toolbar"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_toolbar_webview"
+        android:background="@android:color/black"
+        android:layout_height="0.1dp">
+
+    </TextView>
+
+</com.google.android.material.appbar.AppBarLayout>
+
+<WebView
+    android:id="@+id/webView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</LinearLayout>

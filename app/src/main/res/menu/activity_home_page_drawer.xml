@@ -10,29 +10,35 @@
             android:title="@string/student_inf"
             android:icon="@drawable/cap"
             />
+        <item
+            android:id="@+id/nav_universitySite"
+            android:title="University Site"
+            android:icon="@drawable/ic_web_black_24dp">
+
+        </item>
+            <item
+            android:id="@+id/nav_departmentSite"
+            android:icon="@drawable/calendar"
+            android:title="Department Site"
+            />
             <item
                 android:id="@+id/nav_schOfLectures"
                 android:icon="@drawable/calendar"
                 android:title="@string/schedule_of" />
-            <item
-                android:id="@+id/nav_myGrades"
-                android:icon="@drawable/marks"
-                android:title="@string/my_grades" />
-            <item
-                android:id="@+id/nav_transcript"
-
-                android:icon="@drawable/grade"
-                android:title="@string/transcript" />
 
     </group>
-
     <group
         android:id="@+id/group_2"
         android:checkableBehavior="none">
         <item
-            android:id="@+id/nav_qa"
-            android:title="@string/questionnai"
-            android:icon="@drawable/qa"/>
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Notifications" />
+    </group>
+
+    <group
+        android:id="@+id/group_3"
+        android:checkableBehavior="none">
         <item
             android:id="@+id/nav_mail"
             android:icon="@drawable/mail"
@@ -40,7 +46,8 @@
 
         <item
             android:id="@+id/nav_contacts"
-            android:title="@string/contacts" />
+            android:title="@string/contacts"
+            android:icon="@drawable/ic_mail_outline_black_24dp"/>
         <item
             android:id="@+id/nav_signOut"
             android:icon="@drawable/logout"

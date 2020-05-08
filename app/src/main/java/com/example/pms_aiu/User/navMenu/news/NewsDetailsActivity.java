@@ -1,4 +1,4 @@
-package com.example.pms_aiu.user.navMenu.news;
+package com.example.pms_aiu.User.navMenu.news;
 
 import androidx.appcompat.app.AppCompatActivity;
 
