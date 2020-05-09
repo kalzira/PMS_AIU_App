@@ -34,14 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.loginGuestBtn:
-                Intent signInActivity = new Intent(MainActivity.this, HomePageUsersActivity.class);
-                startActivity(signInActivity);
-                finish();
                 break;
             case R.id.signUpBtn_main:
                 Intent signUpActivity = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(signUpActivity);
-                finish();
                 break;
 
         }

@@ -41,7 +41,7 @@ public class DepartmentSiteFragment extends Fragment {
 
         Toolbar toolbar = root.findViewById(R.id.toolbar_webView); // id of your toolbar
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp); // set the back arrow in toolbar
-        TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
+        final TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
         title_toolbar.setText("Department Site");
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -60,31 +60,28 @@ public class DepartmentSiteFragment extends Fragment {
         webView = root.findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
 
-        table_user.addListenerForSingleValueEvent(new ValueEventListener() {
+        table_user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);
 
-                //Faculty of Engineering and Informatics
-                if(user.getDepartment().contains("COM")){
-                    webView.loadUrl("http://com.iaau.edu.kg/");
 
+                String department = user.getDepartment();
+                //Faculty of Engineering and Informatics
+                if(department.contains("COM")){
+                    webView.loadUrl("http://com.iaau.edu.kg/");
                 }
-                if(user.getDepartment().contains("MAT")){
+                if(department.contains("MAT")){
                     webView.loadUrl("http://mat.iaau.edu.kg/");
                 }
-                if (user.getDepartment().contains("EN")){
+                if (department.contains("EN")){
                     webView.loadUrl("http://electronic.iaau.edu.kg/");
                 }
-                if (user.getDepartment().contains("IE")){
+                if (department.contains("IE")){
                     webView.loadUrl("http://ie.iaau.edu.kg/");
                 }
-
                 //need to implement other departments
-                else{
 
-                    webView.loadUrl("http://www.iaau.edu.kg/view/public/pages/page.xhtml?id=78");
-                }
 
 
 

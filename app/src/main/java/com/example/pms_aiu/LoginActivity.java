@@ -16,9 +16,11 @@ import android.widget.Toast;
 import com.example.pms_aiu.Models.User;
 import com.example.pms_aiu.User.HomePageUsersActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mEmail, mPassword;
 
     private TextView mVerifyText;
-
+    private FirebaseAuth firebaseAuth;
 
 
     private ProgressBar progressBar;
@@ -48,8 +50,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        mEmail = findViewById(R.id.etEmail);
-        mPassword = findViewById(R.id.etPsw);
+        mEmail = findViewById(R.id.etEmail_login);
+        mPassword = findViewById(R.id.etPsw_login);
         mVerifyText = findViewById(R.id.verify_email_text);
 
         progressBar = findViewById(R.id.progressBar);
@@ -57,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mSignInBtn = findViewById(R.id.signInBtn);
 
+        firebaseAuth = FirebaseAuth.getInstance();
         mSignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,33 +74,64 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
-                final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+
+//                if(firebaseAuth.getCurrentUser().isEmailVerified()){
+//                    progressBar.setVisibility(View.GONE);
+//                                                        startActivity(new Intent(LoginActivity.this,
+//                                            HomePageUsersActivity.class));
+//                                    finish();
+//                }else{
+//                    Toast.makeText(LoginActivity.this, "Not verified", Toast.LENGTH_SHORT).show();
+//                }
+
                 firebaseAuth.signInWithEmailAndPassword(email,psw).
                         addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         progressBar.setVisibility(View.GONE);
-                        if(task.isSuccessful()){
-                            if (firebaseAuth.getCurrentUser().isEmailVerified()){
 
-                                    startActivity(new Intent(LoginActivity.this,
-                                            HomePageUsersActivity.class));
-                                    finish();
+                        if (task.isSuccessful()) {
+
+                            if(firebaseAuth.getCurrentUser().isEmailVerified()){
+                                startActivity(new Intent(LoginActivity.this,
+                                        HomePageUsersActivity.class));
+                                finish();
                             }else{
                                 mVerifyText.setVisibility(View.VISIBLE);
-
                             }
-                        }else{
+
+
+                        }
+
+
+//                                mVerifyText.setVisibility(View.VISIBLE);
+//                                firebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                    @Override
+//                                    public void onComplete(@NonNull Task<Void> task) {
+//                                        mVerifyText.setText("VERIFIED");
+//                                        startActivity(new Intent(LoginActivity.this,
+//                                                HomePageUsersActivity.class));
+//                                        finish();
+//                                    }
+//                                }).addOnFailureListener(new OnFailureListener() {
+//                                    @Override
+//                                    public void onFailure(@NonNull Exception e) {
+//                                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+//                                    }
+//                                });
+
+                        else {
                             Toast.makeText(LoginActivity.this, task.getException().getMessage()
                                     , Toast.LENGTH_SHORT).show();
                         }
                     }
+
                 });
 
             }
         });
-
 
     }
 }

@@ -13,11 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 
+import com.example.pms_aiu.MainActivity;
 import com.example.pms_aiu.Models.User;
 import com.example.pms_aiu.R;
 import com.example.pms_aiu.SignUpActivity;
 
 import com.example.pms_aiu.User.navMenu.contact.ContactFragment;
+import com.example.pms_aiu.User.navMenu.lectures.SchOfLecturesFragment;
 import com.example.pms_aiu.User.navMenu.mail.MailFragment;
 import com.example.pms_aiu.User.navMenu.news.NewsFragment;
 import com.example.pms_aiu.User.navMenu.departmentSite.DepartmentSiteFragment;
@@ -72,7 +74,7 @@ public class HomePageUsersActivity extends AppCompatActivity implements Navigati
         final TextView navName = headerView.findViewById(R.id.stName_navHeader);
 
 
-        table_user.addListenerForSingleValueEvent(new ValueEventListener() {
+        table_user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);
@@ -122,29 +124,27 @@ public class HomePageUsersActivity extends AppCompatActivity implements Navigati
                         new UniversitySiteFragment()).addToBackStack(null).commit();
                 break;
 
-
+//working
             case R.id.nav_departmentSite:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new DepartmentSiteFragment()).addToBackStack(null).commit();
                 break;
-
+//working
             case R.id.nav_schOfLectures:
 
-                String urlSch = "http://com.iaau.edu.kg/calendar/schedule-of-lectures.html";
-                Intent schLecIntent = new Intent(Intent.ACTION_VIEW);
-                schLecIntent.setData(Uri.parse(urlSch));
-                startActivity(schLecIntent);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new SchOfLecturesFragment()).addToBackStack(null).commit();
                 break;
 
 
-                //working but need to add open current user mail
+                //working but need to add open current user mail??
             case R.id.nav_mail:
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MailFragment()).addToBackStack(null).commit();
                 break;
 
-
+//working
             case R.id.nav_contacts:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ContactFragment()).addToBackStack(null).commit();
@@ -152,9 +152,9 @@ public class HomePageUsersActivity extends AppCompatActivity implements Navigati
 
 
             case R.id.nav_signOut:
-                Intent signOutIntent = new Intent(HomePageUsersActivity.this, SignUpActivity.class);
+                FirebaseAuth.getInstance().signOut();
                 finish();
-                startActivity(signOutIntent);
+                startActivity(new Intent(HomePageUsersActivity.this, MainActivity.class));
                 break;
 
 

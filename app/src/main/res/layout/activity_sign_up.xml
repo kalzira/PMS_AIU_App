@@ -196,7 +196,7 @@
                         android:background="@null"
                         android:gravity="top"
                         android:hint="university email"
-                        android:text="kalzira.sabytakunova@iaau.edu.kg"
+                        android:text=""
                         android:inputType="textEmailAddress"
                         android:lineSpacingExtra="2sp"
                         android:textAppearance="@style/label.name"
@@ -220,10 +220,9 @@
                         android:background="@null"
                         android:gravity="top"
                         android:hint="Password of e-mail"
-                        android:inputType="numberPassword"
+                        android:inputType="textPassword"
                         android:lineSpacingExtra="2sp"
-                        android:text="773598SabZero"
-                        android:maxLength="11"
+                        android:text=""
                         android:textAppearance="@style/label.name"
                         android:translationY="-0.86sp">
 

@@ -18,10 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pms_aiu.Models.User;
+import com.example.pms_aiu.User.HomePageUsersActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,7 +47,7 @@ public class SignUpActivity extends AppCompatActivity{
 
 
 
-
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -82,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity{
 
         progressBar = findViewById(R.id.progressBar);
 
-
+        firebaseAuth = FirebaseAuth.getInstance();
         mSignUpBtn = findViewById(R.id.signUpBtn);
 
 
@@ -132,18 +134,22 @@ public class SignUpActivity extends AppCompatActivity{
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
                 firebaseAuth.createUserWithEmailAndPassword(email, psw).
                         addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
-                            firebaseAuth.getCurrentUser().sendEmailVerification().
+
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            user.sendEmailVerification().
                                     addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
+
                                             if(task.isSuccessful()){
+
 
                                                     final AlertDialog alertDialog = new AlertDialog.Builder(
                                                             SignUpActivity.this)
@@ -160,6 +166,13 @@ public class SignUpActivity extends AppCompatActivity{
                                                                     //set what would happen when positive button is clicked
 
                                                                     dialogInterface.cancel();
+//                                                                    firebaseAuth.getCurrentUser().reload().addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                                                        @Override
+//                                                                        public void onComplete(@NonNull Task<Void> task) {
+//                                                                            startActivity(new Intent(SignUpActivity.this,
+//                                                                                    LoginActivity.class));
+//                                                                        }
+//                                                                    });
                                                                     startActivity(new Intent(SignUpActivity.this,
                                                                             LoginActivity.class));
                                                                     finish();

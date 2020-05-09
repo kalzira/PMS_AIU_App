@@ -56,7 +56,7 @@ public class StInfoFragment extends Fragment {
         mPhone = root.findViewById(R.id.phone_profile);
         mDepartment = root.findViewById(R.id.department_profile);
 
-        table_user.addListenerForSingleValueEvent(new ValueEventListener() {
+        table_user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);

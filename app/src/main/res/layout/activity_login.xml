@@ -70,7 +70,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etEmail_login"
                 android:layout_width="292dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
@@ -80,7 +80,7 @@
                 android:hint="Enter your Email"
                 android:inputType="textEmailAddress"
                 android:lineSpacingExtra="2sp"
-                android:text="sabytakunovakalzira@gmail.com"
+                android:text="firebaseaccaiu@gmail.com"
                 android:textAppearance="@style/label.name"
                 android:translationY="-0.86sp" />
 
@@ -104,7 +104,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/etPsw"
+                android:id="@+id/etPsw_login"
                 android:layout_width="292dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/bottom_line_email"
@@ -115,7 +115,7 @@
                 android:hint="Password of e-mail"
                 android:inputType="textPassword"
                 android:lineSpacingExtra="2sp"
-                android:text="77359812345"
+                android:text="firebase12345"
                 android:textAppearance="@style/label.name"
                 android:translationY="-0.86sp">
 
