@@ -13,9 +13,9 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".User.navMenu.news.NewsDetailsActivity" />
+        <activity android:name=".User.news.NewsDetailsActivity" />
         <activity
-            android:name=".User.HomePageUsersActivity"
+            android:name=".User.HomePageActivity"
             android:label="@string/title_activity_home_page"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SignUpActivity" />

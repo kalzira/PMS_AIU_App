@@ -1,4 +1,4 @@
-package com.example.pms_aiu.User.navMenu.universitySite;
+package com.example.pms_aiu.User;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ import androidx.fragment.app.Fragment;
 
 
 import com.example.pms_aiu.R;
-import com.example.pms_aiu.User.HomePageUsersActivity;
+import com.example.pms_aiu.User.HomePageActivity;
 
 
 public class UniversitySiteFragment extends Fragment {
@@ -43,7 +43,7 @@ title_toolbar.setText("University Site");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), HomePageUsersActivity.class));
+                startActivity(new Intent(getContext(), HomePageActivity.class));
             }
         });
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
@@ -70,7 +70,7 @@ title_toolbar.setText("University Site");
                     if (webView.canGoBack()) {
                         webView.goBack();
                     } else {
-                        Intent intent = new Intent(getActivity(), HomePageUsersActivity.class);
+                        Intent intent = new Intent(getActivity(), HomePageActivity.class);
                         startActivity(intent);
                     }
                     return true;

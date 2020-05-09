@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="navigation_user_view">
 
     <group android:id="@+id/group_1"
         android:checkableBehavior="none">
         <item
             android:id="@+id/nav_studentInf"
+            android:iconTint="@android:color/black"
             android:title="@string/student_inf"
             android:icon="@drawable/cap"
             />
@@ -18,12 +19,13 @@
         </item>
             <item
             android:id="@+id/nav_departmentSite"
-            android:icon="@drawable/calendar"
+            android:icon="@drawable/ic_web_asset_black_24dp"
             android:title="Department Site"
             />
             <item
                 android:id="@+id/nav_schOfLectures"
                 android:icon="@drawable/calendar"
+                android:iconTint="@android:color/black"
                 android:title="@string/schedule_of" />
 
     </group>

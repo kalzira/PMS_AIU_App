@@ -1,4 +1,4 @@
-package com.example.pms_aiu.User.navMenu.departmentSite;
+package com.example.pms_aiu.User;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +20,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.pms_aiu.Models.User;
 import com.example.pms_aiu.R;
-import com.example.pms_aiu.User.HomePageUsersActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class DepartmentSiteFragment extends Fragment {
+public class SchOfLecturesFragment extends Fragment {
 
 
     private WebView webView;
@@ -41,13 +40,13 @@ public class DepartmentSiteFragment extends Fragment {
 
         Toolbar toolbar = root.findViewById(R.id.toolbar_webView); // id of your toolbar
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp); // set the back arrow in toolbar
-        final TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
-        title_toolbar.setText("Department Site");
+        TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
+        title_toolbar.setText("Schedule of Lectures");
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), HomePageUsersActivity.class));
+                startActivity(new Intent(getContext(), HomePageActivity.class));
             }
         });
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
@@ -60,28 +59,32 @@ public class DepartmentSiteFragment extends Fragment {
         webView = root.findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
 
-        table_user.addValueEventListener(new ValueEventListener() {
+        table_user.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);
 
-
-                String department = user.getDepartment();
                 //Faculty of Engineering and Informatics
-                if(department.contains("COM")){
-                    webView.loadUrl("http://com.iaau.edu.kg/");
+                if(user.getDepartment().contains("COM")){
+                    webView.loadUrl("http://com.iaau.edu.kg/calendar/schedule-of-lectures.html");
+
                 }
-                if(department.contains("MAT")){
-                    webView.loadUrl("http://mat.iaau.edu.kg/");
+                if(user.getDepartment().contains("MAT")){
+                    webView.loadUrl("https://docs.google.com/spreadsheets/d/1bUVQTZo9ecq7GHSVKKsqKctbwGkfD9CFYGJnQY2eyVg/edit?ts=5c4195b3#gid=757678406");
                 }
-                if (department.contains("EN")){
-                    webView.loadUrl("http://electronic.iaau.edu.kg/");
+                if (user.getDepartment().contains("EN")){
+                    webView.loadUrl("http://electronic.iaau.edu.kg/?q=en/article/schedule-lecture");
                 }
-                if (department.contains("IE")){
+                if (user.getDepartment().contains("IE")){
+                    //Чтобы открыть этот опубликованный документ, необходимо иметь разрешение.
                     webView.loadUrl("http://ie.iaau.edu.kg/");
                 }
-                //need to implement other departments
 
+                //need to implement other departments
+                else{
+
+                    webView.loadUrl("http://www.iaau.edu.kg/view/public/pages/page.xhtml?id=78");
+                }
 
 
 
@@ -113,7 +116,7 @@ public class DepartmentSiteFragment extends Fragment {
                     if (webView.canGoBack()) {
                         webView.goBack();
                     } else {
-                        Intent intent = new Intent(getActivity(), HomePageUsersActivity.class);
+                        Intent intent = new Intent(getActivity(), HomePageActivity.class);
                         startActivity(intent);
                     }
                     return true;

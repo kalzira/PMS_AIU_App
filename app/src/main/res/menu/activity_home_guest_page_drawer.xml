@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_guest_view">
+
+    <group android:id="@+id/group_2">
+        <item
+            android:id="@+id/nav_guest_signUp"
+            android:icon="@drawable/ic_person_outline_black_24dp"
+            android:title="Sign Up" />
+    </group>
+    <group android:id="@+id/group_1"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_guest_universitySite"
+            android:title="University Site"
+            android:icon="@drawable/ic_web_black_24dp">
+
+        </item>
+        <item
+            android:id="@+id/nav_guest_faculties"
+            android:icon="@drawable/calendar"
+            android:title="Faculties"
+            />
+
+
+    </group>
+
+
+    <group
+        android:id="@+id/group_3"
+        android:checkableBehavior="none">
+
+
+        <item
+            android:id="@+id/nav_contacts"
+            android:title="@string/contacts"
+            android:icon="@drawable/ic_mail_outline_black_24dp"/>
+
+    </group>
+
+
+</menu>

@@ -13,14 +13,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pms_aiu.Models.User;
-import com.example.pms_aiu.User.HomePageUsersActivity;
+import com.example.pms_aiu.User.HomePageActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -79,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
 //                if(firebaseAuth.getCurrentUser().isEmailVerified()){
 //                    progressBar.setVisibility(View.GONE);
 //                                                        startActivity(new Intent(LoginActivity.this,
-//                                            HomePageUsersActivity.class));
+//                                            HomePageActivity.class));
 //                                    finish();
 //                }else{
 //                    Toast.makeText(LoginActivity.this, "Not verified", Toast.LENGTH_SHORT).show();
@@ -96,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             if(firebaseAuth.getCurrentUser().isEmailVerified()){
                                 startActivity(new Intent(LoginActivity.this,
-                                        HomePageUsersActivity.class));
+                                        HomePageActivity.class));
                                 finish();
                             }else{
                                 mVerifyText.setVisibility(View.VISIBLE);
@@ -112,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                    public void onComplete(@NonNull Task<Void> task) {
 //                                        mVerifyText.setText("VERIFIED");
 //                                        startActivity(new Intent(LoginActivity.this,
-//                                                HomePageUsersActivity.class));
+//                                                HomePageActivity.class));
 //                                        finish();
 //                                    }
 //                                }).addOnFailureListener(new OnFailureListener() {

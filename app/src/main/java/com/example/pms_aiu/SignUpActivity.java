@@ -9,8 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -18,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pms_aiu.Models.User;
-import com.example.pms_aiu.User.HomePageUsersActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,8 +26,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class SignUpActivity extends AppCompatActivity{
 
@@ -166,13 +161,7 @@ public class SignUpActivity extends AppCompatActivity{
                                                                     //set what would happen when positive button is clicked
 
                                                                     dialogInterface.cancel();
-//                                                                    firebaseAuth.getCurrentUser().reload().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                                                        @Override
-//                                                                        public void onComplete(@NonNull Task<Void> task) {
-//                                                                            startActivity(new Intent(SignUpActivity.this,
-//                                                                                    LoginActivity.class));
-//                                                                        }
-//                                                                    });
+
                                                                     startActivity(new Intent(SignUpActivity.this,
                                                                             LoginActivity.class));
                                                                     finish();

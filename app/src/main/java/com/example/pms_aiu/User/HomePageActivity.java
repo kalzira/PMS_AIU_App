@@ -2,11 +2,11 @@ package com.example.pms_aiu.User;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,16 +16,10 @@ import androidx.core.view.GravityCompat;
 import com.example.pms_aiu.MainActivity;
 import com.example.pms_aiu.Models.User;
 import com.example.pms_aiu.R;
+
 import com.example.pms_aiu.SignUpActivity;
+import com.example.pms_aiu.User.news.NewsFragment;
 
-import com.example.pms_aiu.User.navMenu.contact.ContactFragment;
-import com.example.pms_aiu.User.navMenu.lectures.SchOfLecturesFragment;
-import com.example.pms_aiu.User.navMenu.mail.MailFragment;
-import com.example.pms_aiu.User.navMenu.news.NewsFragment;
-import com.example.pms_aiu.User.navMenu.departmentSite.DepartmentSiteFragment;
-import com.example.pms_aiu.User.navMenu.stInfo.StInfoFragment;
-
-import com.example.pms_aiu.User.navMenu.universitySite.UniversitySiteFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -38,11 +32,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 
-import java.util.List;
-
-public class HomePageUsersActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomePageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     private DrawerLayout drawer;
@@ -66,29 +57,45 @@ public class HomePageUsersActivity extends AppCompatActivity implements Navigati
 
         drawer = findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        final NavigationView navigationView = findViewById(R.id.nav_view);
 
+        navigationView.setNavigationItemSelectedListener(this);
         View headerView = navigationView.getHeaderView(0);
         final TextView navId = (TextView) headerView.findViewById(R.id.stId_navHeader);
         final TextView navName = headerView.findViewById(R.id.stName_navHeader);
+        ImageView navImage = headerView.findViewById(R.id.iconProfile_navHeader);
+        if (firebaseAuth.getCurrentUser() == null) {
+            navName.setText("Welcome!");
+            navId.setVisibility(View.INVISIBLE);
+            navImage.setVisibility(View.INVISIBLE);
+
+            navigationView.getMenu().clear();
+            navigationView.inflateMenu(R.menu.activity_home_guest_page_drawer);
 
 
-        table_user.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);
-                navId.setText(user.getStudentId());
-                navName.setText(user.getFirstName() + " " + user.getLastName());
+        } else {
+            table_user.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    User user = dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);
+                    navId.setText(user.getStudentId());
+                    navName.setText(user.getFirstName() + " " + user.getLastName());
 
 
-            }
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
+                }
+            });
+        }
+
+
+
+
+
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -106,6 +113,7 @@ public class HomePageUsersActivity extends AppCompatActivity implements Navigati
         }
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -118,6 +126,7 @@ public class HomePageUsersActivity extends AppCompatActivity implements Navigati
                 break;
 
                 //working
+            case R.id.nav_guest_universitySite:
             case R.id.nav_universitySite:
 //
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -154,8 +163,19 @@ public class HomePageUsersActivity extends AppCompatActivity implements Navigati
             case R.id.nav_signOut:
                 FirebaseAuth.getInstance().signOut();
                 finish();
-                startActivity(new Intent(HomePageUsersActivity.this, MainActivity.class));
+                startActivity(new Intent(HomePageActivity.this, MainActivity.class));
                 break;
+
+
+            case R.id.nav_guest_faculties:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FacultiesSiteFragment()).addToBackStack(null).commit();
+                break;
+
+            case R.id.nav_guest_signUp:
+                startActivity(new Intent(HomePageActivity.this, SignUpActivity.class));
+                break;
+
 
 
         }

@@ -1,4 +1,4 @@
-package com.example.pms_aiu.User.navMenu.contact;
+package com.example.pms_aiu.User;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,13 +19,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.pms_aiu.R;
-import com.example.pms_aiu.User.HomePageUsersActivity;
+import com.example.pms_aiu.User.HomePageActivity;
+
+public class FacultiesSiteFragment extends Fragment {
 
 
-public class ContactFragment extends Fragment {
-
-
-private WebView webView;
+    private WebView webView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -35,20 +34,21 @@ private WebView webView;
 
         Toolbar toolbar = root.findViewById(R.id.toolbar_webView); // id of your toolbar
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp); // set the back arrow in toolbar
-        TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
-        title_toolbar.setText("Contact Us");
+        final TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
+        title_toolbar.setText("Faculties");
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), HomePageUsersActivity.class));
+                startActivity(new Intent(getContext(), HomePageActivity.class));
             }
         });
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
         webView = root.findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://www.iaau.edu.kg/view/public/pages/page.xhtml;jsessionid=gl2CjdudoObLpX_mGm8McmCuRPgNqDA6EyfwZPep.unknown-host?id=153");
+
+        webView.loadUrl("http://www.iaau.edu.kg/view/public/pages/page.xhtml?id=78");
         WebSettings webSettings = webView.getSettings();
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
@@ -68,7 +68,7 @@ private WebView webView;
                     if (webView.canGoBack()) {
                         webView.goBack();
                     } else {
-                        Intent intent = new Intent(getActivity(), HomePageUsersActivity.class);
+                        Intent intent = new Intent(getActivity(), HomePageActivity.class);
                         startActivity(intent);
                     }
                     return true;
@@ -78,5 +78,4 @@ private WebView webView;
         });
         return root;
     }
-
 }
