@@ -2,12 +2,15 @@ package com.example.pms_aiu.Admin;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,7 +34,7 @@ import com.squareup.picasso.Picasso;
 
 public class AddNewsActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
-    private Button mBtnUploadImg, mBtnAddNews;
+    private Button mBtnUploadImg, mBtnAddNews, mAddDescriptionBtn;
     private EditText mEtTitle, mEtTime, mEtPlace;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
@@ -43,6 +46,7 @@ public class AddNewsActivity extends AppCompatActivity {
 
     private StorageTask mUploadTask;
 
+    private String descriptionTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,8 @@ public class AddNewsActivity extends AppCompatActivity {
         mImageView = findViewById(R.id.uploadedImgView);
         mProgressBar = findViewById(R.id.progress_bar_add_news);
 
+        mAddDescriptionBtn = findViewById(R.id.addDescriptionBtn);
+
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("News");
@@ -83,6 +89,34 @@ public class AddNewsActivity extends AppCompatActivity {
         });
 
 
+        mAddDescriptionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(AddNewsActivity.this);
+                final EditText edittext = new EditText(getApplicationContext());
+                alert.setMessage("Please fill form to add news description");
+                alert.setTitle("Add Description");
+
+                alert.setView(edittext);
+
+                alert.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+
+                        descriptionTxt = edittext.getText().toString();
+
+                    }
+                });
+
+                alert.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.cancel();
+                    }
+                });
+
+                alert.show();
+            }
+        });
 
         mBtnAddNews.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,15 +161,17 @@ public class AddNewsActivity extends AppCompatActivity {
                         Toast.makeText(AddNewsActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
 
 
-                        News news = new News(mEtTitle.getText().toString().trim(),
-                                downloadUri.toString(), mEtTime.getText().toString().trim(),
-                                mEtPlace.getText().toString().trim());
 
-                        mDatabaseRef.push().setValue(news);
-                        mEtTitle.setText("");
-                        mEtPlace.setText("");
-                        mEtTime.setText("");
-                        mImageView.setVisibility(View.INVISIBLE);
+                            News news = new News(mEtTitle.getText().toString().trim(),
+                                    downloadUri.toString(), mEtTime.getText().toString().trim(),
+                                    mEtPlace.getText().toString().trim(), descriptionTxt.trim());
+
+                            mDatabaseRef.push().setValue(news);
+                            mEtTitle.setText("");
+                            mEtPlace.setText("");
+                            mEtTime.setText("");
+                            mImageView.setVisibility(View.INVISIBLE);
+
                     } else
                     {
                         Toast.makeText(AddNewsActivity.this, "upload failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

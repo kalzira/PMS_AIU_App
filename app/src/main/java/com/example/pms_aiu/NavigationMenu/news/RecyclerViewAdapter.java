@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,10 +18,13 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.view.View.GONE;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
 
     private Context mContext;
     private List<News> mNews;
+    private LinearLayout mLocationView;
 
 
     public RecyclerViewAdapter(Context context, List<News> news) {
@@ -30,21 +34,38 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.home_layout_item, parent, false);
+        mLocationView = v.findViewById(R.id.locationLayout);
         return new ItemViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         News newsCurrent = mNews.get(position);
-        holder.titleView.setText(newsCurrent.getTitle());
-        holder.timeView.setText(newsCurrent.getTime());
-        holder.locationView.setText(newsCurrent.getLocation());
-        holder.mapView.setImageResource(R.drawable.map);
-        Picasso.get().
-                load(newsCurrent.getImage())
-                .fit()
-                .centerCrop()
-                .into(holder.imageView);
+
+        if(newsCurrent.getLocation().equals("")){
+
+            holder.mapView.setVisibility(GONE);
+            holder.locationView.setVisibility(GONE);
+            holder.locationView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+            holder.mapView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+            holder.titleView.setText(newsCurrent.getTitle());
+            holder.timeView.setText(newsCurrent.getTime());
+            Picasso.get().
+                    load(newsCurrent.getImage())
+                    .fit()
+                    .centerCrop()
+                    .into(holder.imageView);
+        }else{
+            holder.titleView.setText(newsCurrent.getTitle());
+            holder.timeView.setText(newsCurrent.getTime());
+            holder.locationView.setText(newsCurrent.getLocation());
+            holder.mapView.setImageResource(R.drawable.map);
+            Picasso.get().
+                    load(newsCurrent.getImage())
+                    .fit()
+                    .centerCrop()
+                    .into(holder.imageView);
+        }
     }
     @Override
     public int getItemCount() {
@@ -105,36 +126,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 //
 //        }
 //    }
-//    public RecyclerViewAdapter(ArrayList<ItemHomeModel> itemHomeList){
-//            mItemHomeList = itemHomeList;
-//    }
-//
-//    @NonNull
-//    @Override
-//    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_layout_item, parent,false);
-//        ItemViewHolder itemViewHolder = new ItemViewHolder(v, mListener);
-//        return itemViewHolder;
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-//            ItemHomeModel currentItem = mItemHomeList.get(position);
-//            holder.home_photo.setImageResource(currentItem.getmHomeImage());
-//        holder.map_event.setImageResource(currentItem.getmMapImage());
-//
-//        holder.title_event.setText(currentItem.getmTitle_event());
-//        holder.time_event.setText(currentItem.getmTime_event());
-//        holder.location_event.setText(currentItem.getmLocation_event());
-//
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return mItemHomeList.size();
-//    }
-
-
-
 
 }

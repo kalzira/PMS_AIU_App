@@ -1,23 +1,26 @@
 package com.example.pms_aiu.Models;
 
 public class News {
-    private String Title, Image, Time, Location;
+    private String Title, Image, Time, Location, Description;
 
 
     public News() {
     }
 
-    public News(String title, String image, String time, String location) {
+    public News(String title, String image, String time, String location, String description) {
         Title = title;
         Image = image;
         Time = time;
         Location = location;
+        Description = description;
     }
 
-    public News(String title, String image, String time) {
-        Title = title;
-        Image = image;
-        Time = time;
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 
     public String getTitle() {

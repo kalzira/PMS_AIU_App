@@ -137,27 +137,27 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         switch (item.getItemId()) {
 
 
-            //working
+
             case R.id.nav_studentInf:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new StInfoFragment()).addToBackStack(null).commit();
                 break;
 
-                //working
+
             case R.id.nav_admin_universitySite:
             case R.id.nav_guest_universitySite:
             case R.id.nav_universitySite:
-//
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new UniversitySiteFragment()).addToBackStack(null).commit();
                 break;
 
-//working
+
             case R.id.nav_departmentSite:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new DepartmentSiteFragment()).addToBackStack(null).commit();
                 break;
-//working
+
             case R.id.nav_schOfLectures:
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -165,20 +165,21 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                 break;
 
 
-                //working but need to add open current user mail??
+
             case R.id.nav_mail:
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new MailFragment()).addToBackStack(null).commit();
                 break;
 
-//working
+
             case R.id.nav_contacts:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ContactFragment()).addToBackStack(null).commit();
                 break;
 
 
+            case R.id.nav_admin_signOut:
             case R.id.nav_signOut:
                 FirebaseAuth.getInstance().signOut();
                 finish();

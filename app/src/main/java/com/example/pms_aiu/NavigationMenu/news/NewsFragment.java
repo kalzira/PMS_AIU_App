@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -37,7 +38,7 @@ public class NewsFragment extends Fragment {
     private ProgressBar mProgressCircle;
     private DatabaseReference mDatabaseRef;
     private List<News> mNews;
-
+private LinearLayout mLocationLayout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class NewsFragment extends Fragment {
                 mAddNews.setVisibility(View.INVISIBLE);
             }
         }
+        mLocationLayout = root.findViewById(R.id.locationLayout);
         mRecyclerView = root.findViewById(R.id.recyclerView_home);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
@@ -70,13 +72,16 @@ public class NewsFragment extends Fragment {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     News news = postSnapshot.getValue(News.class);
                     mNews.add(news);
+
                 }
-                mAdapter = new RecyclerViewAdapter(root.getContext(), mNews);
-                mRecyclerView.setAdapter(mAdapter);
-                mProgressCircle.setVisibility(View.INVISIBLE);
+
+                    mAdapter = new RecyclerViewAdapter(root.getContext(), mNews);
+                    mRecyclerView.setAdapter(mAdapter);
+                    mProgressCircle.setVisibility(View.INVISIBLE);
+
+
+
             }
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(getActivity(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();

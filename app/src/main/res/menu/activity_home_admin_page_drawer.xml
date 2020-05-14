@@ -24,19 +24,29 @@
         android:icon="@drawable/ic_person_outline_black_24dp"
         android:title="Students"
         />
+
+    <item
+        android:id="@+id/nav_admin_notifications"
+        android:title="Notifications"
+        android:icon="@drawable/ic_mail_outline_black_24dp"/>
+
+
 </group>
 
     <group
         android:id="@+id/group_3"
         android:checkableBehavior="none">
 
-
         <item
-            android:id="@+id/nav_admin_notifications"
-            android:title="Notifications"
-            android:icon="@drawable/ic_mail_outline_black_24dp"/>
+            android:id="@+id/nav_admin_signOut"
+            android:icon="@drawable/logout"
+            android:title="@string/signOut" />
+
+
 
     </group>
+
+
 
 
 </menu>
