@@ -10,7 +10,7 @@
 
 
 
-    <!-- Ajo 1 -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_profile"
         android:layout_width="match_parent"

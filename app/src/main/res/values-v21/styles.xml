@@ -198,22 +198,22 @@
     <style name="time">
 
         <item name="android:textSize">
-            13sp
+            15sp
         </item>
 
         <item name="android:textColor">
-            #FFFFFF
+            #000000
         </item>
 
     </style>
     <style name="a309">
 
         <item name="android:textSize">
-            13sp
+            15sp
         </item>
 
         <item name="android:textColor">
-            #FFFFFF
+            #000000
         </item>
 
     </style>
@@ -380,7 +380,7 @@
     <style name="today">
 
         <item name="android:textSize">
-            34sp
+            20sp
         </item>
 
         <item name="android:letterSpacing">

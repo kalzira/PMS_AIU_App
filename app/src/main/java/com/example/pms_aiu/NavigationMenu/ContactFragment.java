@@ -1,4 +1,4 @@
-package com.example.pms_aiu.User;
+package com.example.pms_aiu.NavigationMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,19 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-import com.example.pms_aiu.Models.User;
 import com.example.pms_aiu.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-public class DepartmentSiteFragment extends Fragment {
 
 
-    private WebView webView;
+public class ContactFragment extends Fragment {
+
+
+private WebView webView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,8 +34,8 @@ public class DepartmentSiteFragment extends Fragment {
 
         Toolbar toolbar = root.findViewById(R.id.toolbar_webView); // id of your toolbar
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp); // set the back arrow in toolbar
-        final TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
-        title_toolbar.setText("Department Site");
+        TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
+        title_toolbar.setText("Contact Us");
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,48 +45,9 @@ public class DepartmentSiteFragment extends Fragment {
         });
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
-        final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        //Initialize Firebase
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference table_user = database.getReference("User");
-
         webView = root.findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
-
-        table_user.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.child(firebaseAuth.getCurrentUser().getUid()).getValue(User.class);
-
-
-                String department = user.getDepartment();
-                //Faculty of Engineering and Informatics
-                if(department.contains("COM")){
-                    webView.loadUrl("http://com.iaau.edu.kg/");
-                }
-                if(department.contains("MAT")){
-                    webView.loadUrl("http://mat.iaau.edu.kg/");
-                }
-                if (department.contains("EN")){
-                    webView.loadUrl("http://electronic.iaau.edu.kg/");
-                }
-                if (department.contains("IE")){
-                    webView.loadUrl("http://ie.iaau.edu.kg/");
-                }
-                //need to implement other departments
-
-
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
+        webView.loadUrl("http://www.iaau.edu.kg/view/public/pages/page.xhtml;jsessionid=gl2CjdudoObLpX_mGm8McmCuRPgNqDA6EyfwZPep.unknown-host?id=153");
         WebSettings webSettings = webView.getSettings();
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
@@ -122,4 +77,5 @@ public class DepartmentSiteFragment extends Fragment {
         });
         return root;
     }
+
 }

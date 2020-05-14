@@ -1,4 +1,4 @@
-package com.example.pms_aiu.User;
+package com.example.pms_aiu.NavigationMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,11 +20,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.pms_aiu.R;
 
+public class FacultiesSiteFragment extends Fragment {
 
-public class MailFragment extends Fragment {
 
-
-private WebView webView;
+    private WebView webView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -33,9 +32,9 @@ private WebView webView;
         View root = inflater.inflate(R.layout.fragment_web_view, container, false);
 
         Toolbar toolbar = root.findViewById(R.id.toolbar_webView); // id of your toolbar
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);// set the back arrow in toolbar
-        TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
-        title_toolbar.setText("University Mail");
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp); // set the back arrow in toolbar
+        final TextView title_toolbar = root.findViewById(R.id.title_toolbar_webview);
+        title_toolbar.setText("Faculties");
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +46,8 @@ private WebView webView;
 
         webView = root.findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://mail.google.com/mail/u/");
+
+        webView.loadUrl("http://www.iaau.edu.kg/view/public/pages/page.xhtml?id=78");
         WebSettings webSettings = webView.getSettings();
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
@@ -77,5 +77,4 @@ private WebView webView;
         });
         return root;
     }
-
 }

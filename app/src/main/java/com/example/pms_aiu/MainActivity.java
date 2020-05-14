@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.pms_aiu.User.HomePageActivity;
+import com.example.pms_aiu.NavigationMenu.HomePageActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button signUpBtn;
     private TextView signInGuestBtn;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +28,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         signUpBtn = findViewById(R.id.signUpBtn_main);
         signUpBtn.setOnClickListener(this);
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        if(firebaseAuth.getCurrentUser()!=null){
+            startActivity(new Intent(MainActivity.this, HomePageActivity.class));
+
+        }
+        super.onStart();
     }
 
     @Override
@@ -42,4 +54,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
 }

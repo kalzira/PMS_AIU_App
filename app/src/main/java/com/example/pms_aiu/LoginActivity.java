@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pms_aiu.User.HomePageActivity;
+import com.example.pms_aiu.NavigationMenu.HomePageActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -60,74 +60,54 @@ public class LoginActivity extends AppCompatActivity {
         mSignInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = mEmail.getText().toString().trim();
-                String psw = mPassword.getText().toString().trim();
-                if(TextUtils.isEmpty(email)){
+                final String email = mEmail.getText().toString().trim();
+                final String psw = mPassword.getText().toString().trim();
+                if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required");
                     return;
                 }
-                if(TextUtils.isEmpty(psw)){
+                if (TextUtils.isEmpty(psw)) {
                     mPassword.setError("Password is required");
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
 
 
-//                if(firebaseAuth.getCurrentUser().isEmailVerified()){
-//                    progressBar.setVisibility(View.GONE);
-//                                                        startActivity(new Intent(LoginActivity.this,
-//                                            HomePageActivity.class));
-//                                    finish();
-//                }else{
-//                    Toast.makeText(LoginActivity.this, "Not verified", Toast.LENGTH_SHORT).show();
-//                }
-
-                firebaseAuth.signInWithEmailAndPassword(email,psw).
+                firebaseAuth.signInWithEmailAndPassword(email, psw).
                         addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        progressBar.setVisibility(View.GONE);
+                                progressBar.setVisibility(View.GONE);
 
-                        if (task.isSuccessful()) {
+                                if (task.isSuccessful()) {
 
-                            if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                                startActivity(new Intent(LoginActivity.this,
-                                        HomePageActivity.class));
-                                finish();
-                            }else{
-                                mVerifyText.setVisibility(View.VISIBLE);
+                                    if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+
+                                        if(firebaseAuth.getCurrentUser().getEmail().equals("pmsaiuapp@gmail.com")){
+                                            startActivity(new Intent(LoginActivity.this,
+                                                    HomePageActivity.class));
+                                        }else {
+                                            startActivity(new Intent(LoginActivity.this,
+                                                    HomePageActivity.class));
+                                            finish();
+                                        }
+                                    } else {
+                                        mVerifyText.setVisibility(View.VISIBLE);
+                                    }
+
+
+                                } else {
+                                    Toast.makeText(LoginActivity.this, task.getException().getMessage()
+                                            , Toast.LENGTH_SHORT).show();
+                                }
                             }
 
+                        });
 
-                        }
-
-
-//                                mVerifyText.setVisibility(View.VISIBLE);
-//                                firebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        mVerifyText.setText("VERIFIED");
-//                                        startActivity(new Intent(LoginActivity.this,
-//                                                HomePageActivity.class));
-//                                        finish();
-//                                    }
-//                                }).addOnFailureListener(new OnFailureListener() {
-//                                    @Override
-//                                    public void onFailure(@NonNull Exception e) {
-//                                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                                    }
-//                                });
-
-                        else {
-                            Toast.makeText(LoginActivity.this, task.getException().getMessage()
-                                    , Toast.LENGTH_SHORT).show();
-                        }
                     }
 
-                });
 
-            }
         });
 
     }

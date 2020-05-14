@@ -1,4 +1,4 @@
-package com.example.pms_aiu.User;
+package com.example.pms_aiu.NavigationMenu;
 
 
 import android.content.Intent;
@@ -18,7 +18,7 @@ import com.example.pms_aiu.Models.User;
 import com.example.pms_aiu.R;
 
 import com.example.pms_aiu.SignUpActivity;
-import com.example.pms_aiu.User.news.NewsFragment;
+import com.example.pms_aiu.NavigationMenu.news.NewsFragment;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,6 +37,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
 
     private DrawerLayout drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,24 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         final TextView navId = (TextView) headerView.findViewById(R.id.stId_navHeader);
         final TextView navName = headerView.findViewById(R.id.stName_navHeader);
         ImageView navImage = headerView.findViewById(R.id.iconProfile_navHeader);
-        if (firebaseAuth.getCurrentUser() == null) {
+
+
+
+        if(firebaseAuth.getCurrentUser().getEmail().equals("pmsaiuapp@gmail.com")){
+            final DatabaseReference table_admin = database.getReference("Admin");
+            navName.setText("Admin Page");
+            navId.setVisibility(View.INVISIBLE);
+            navImage.setVisibility(View.INVISIBLE);
+
+
+            navigationView.getMenu().clear();
+            navigationView.inflateMenu(R.menu.activity_home_admin_page_drawer);
+
+        }
+//
+//
+//
+      else if (firebaseAuth.getCurrentUser() == null) {
             navName.setText("Welcome!");
             navId.setVisibility(View.INVISIBLE);
             navImage.setVisibility(View.INVISIBLE);
@@ -126,6 +144,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                 break;
 
                 //working
+            case R.id.nav_admin_universitySite:
             case R.id.nav_guest_universitySite:
             case R.id.nav_universitySite:
 //

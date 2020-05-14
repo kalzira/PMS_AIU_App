@@ -17,6 +17,7 @@ public class User {
         Email = email;
     }
 
+
     public String getFirstName() {
         return FirstName;
     }

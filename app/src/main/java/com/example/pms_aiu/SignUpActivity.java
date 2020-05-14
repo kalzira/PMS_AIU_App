@@ -169,6 +169,8 @@ public class SignUpActivity extends AppCompatActivity{
                                                                         @Override
                                                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+
+
                                                                             User user = new User(firstName,lastName,id,email,phone,department);
                                                                             table_user.child(firebaseAuth.getCurrentUser().getUid()).setValue(user);
 

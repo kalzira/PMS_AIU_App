@@ -1,4 +1,4 @@
-package com.example.pms_aiu.User;
+package com.example.pms_aiu.NavigationMenu;
 
 import android.content.Intent;
 import android.os.Bundle;

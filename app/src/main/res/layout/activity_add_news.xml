@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add_news"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextAppearance="@style/TitleText">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="2sp"
+            android:text="Add News"
+            android:textAppearance="@style/title_profile"
+            android:translationY="-0.86sp"
+            android:textColor="@android:color/black" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="20dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical"
+        android:layout_weight="0.45">
+
+        <EditText
+
+            android:id="@+id/etTitleNews"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter News Title"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textAppearance="@style/label.name"
+            android:textSize="17sp" />
+        <EditText
+            android:id="@+id/etTimeEvent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter Time of an event"
+            android:gravity="center"
+            android:textAppearance="@style/label.name"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp" />
+        <EditText
+            android:id="@+id/etPlaceEvent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="Enter Place of an event(Not required)"
+            android:textAppearance="@style/label.name"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/uploadImgBtn"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textAppearance="@style/title_registr_btn"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:background="@drawable/btn_registr_bg"
+            android:text="Upload Image" />
+
+
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/uploadedImgView"
+        android:layout_weight="0.45"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_add_news"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.025"
+        android:layout_marginBottom="10dp" />
+
+
+    <Button
+        android:id="@+id/addNewsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.075"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_registr_bg"
+        android:textAppearance="@style/title_registr_btn"
+        android:text="Add News" />
+
+
+</LinearLayout>
