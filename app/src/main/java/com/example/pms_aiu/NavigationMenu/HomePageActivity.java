@@ -68,21 +68,9 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
 
 
-        if(firebaseAuth.getCurrentUser().getEmail().equals("pmsaiuapp@gmail.com")){
-            final DatabaseReference table_admin = database.getReference("Admin");
-            navName.setText("Admin Page");
-            navId.setVisibility(View.INVISIBLE);
-            navImage.setVisibility(View.INVISIBLE);
 
 
-            navigationView.getMenu().clear();
-            navigationView.inflateMenu(R.menu.activity_home_admin_page_drawer);
-
-        }
-//
-//
-//
-      else if (firebaseAuth.getCurrentUser() == null) {
+       if (firebaseAuth.getCurrentUser() == null) {
             navName.setText("Welcome!");
             navId.setVisibility(View.INVISIBLE);
             navImage.setVisibility(View.INVISIBLE);
@@ -91,7 +79,19 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
             navigationView.inflateMenu(R.menu.activity_home_guest_page_drawer);
 
 
-        } else {
+        }
+       else if(firebaseAuth.getCurrentUser().getEmail().equals("pmsaiuapp@gmail.com")){
+           final DatabaseReference table_admin = database.getReference("Admin");
+           navName.setText("Admin Page");
+           navId.setVisibility(View.INVISIBLE);
+           navImage.setVisibility(View.INVISIBLE);
+
+
+           navigationView.getMenu().clear();
+           navigationView.inflateMenu(R.menu.activity_home_admin_page_drawer);
+
+       }
+       else {
             table_user.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

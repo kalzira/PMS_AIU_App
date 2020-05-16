@@ -3,10 +3,12 @@ package com.example.pms_aiu.NavigationMenu.news;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -66,6 +68,7 @@ public class NewsFragment extends Fragment {
         } else {
             if (firebaseAuth.getCurrentUser().getEmail().equals("pmsaiuapp@gmail.com")) {
                 mAddNews.setVisibility(View.VISIBLE);
+
                 mAddNews.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -73,6 +76,7 @@ public class NewsFragment extends Fragment {
                         startActivity(intent);
                     }
                 });
+
             } else {
                 mAddNews.setVisibility(View.INVISIBLE);
             }
@@ -129,7 +133,22 @@ public class NewsFragment extends Fragment {
                     }
                 });
 
-                alert.show();
+                AlertDialog dialog = alert.create();
+
+                dialog.show();
+
+                // Get the alert dialog buttons reference
+                Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                Button negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+
+
+                positiveButton.setTextColor(Color.parseColor("#FF0B8B42"));
+                positiveButton.setBackgroundColor(Color.parseColor("#FFE1FCEA"));
+
+                negativeButton.setTextColor(Color.parseColor("#FFFF0400"));
+                negativeButton.setBackgroundColor(Color.parseColor("#FFFCB9B7"));
+
+
 
 
 

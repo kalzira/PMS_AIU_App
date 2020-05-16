@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pms_aiu.Models.News;
 import com.example.pms_aiu.R;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 
@@ -27,6 +28,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext;
     private List<News> mNews;
+
 
     ///
     private OnItemClickListener mListener;
@@ -55,6 +57,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(final ItemViewHolder holder, int position) {
         final News newsCurrent = mNews.get(position);
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+
+        if(firebaseAuth.getCurrentUser()!=null){
+            if(firebaseAuth.getCurrentUser().getEmail().equals("pmsaiuapp@gmail.com")){
+                holder.btnEdit.setVisibility(View.VISIBLE);
+                holder.btnDelete.setVisibility(View.VISIBLE);
+            }else{
+                holder.btnEdit.setVisibility(GONE);
+                holder.btnDelete.setVisibility(GONE);
+            }
+        }else {
+
+            holder.btnEdit.setVisibility(GONE);
+            holder.btnDelete.setVisibility(GONE);
+        }
 
         if(newsCurrent.getLocation().equals("")){
 
@@ -94,6 +113,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             }
         });
+
 //        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -116,6 +136,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView titleView, timeView, locationView;
         public ImageView imageView, mapView;
         public Button btnEdit, btnDelete;
+        private FirebaseAuth firebaseAuth;
         public ItemViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             titleView = itemView.findViewById(R.id.titleNews);
@@ -123,6 +144,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             locationView = itemView.findViewById(R.id.locationNews);
             imageView = itemView.findViewById(R.id.imgNews);
             mapView = itemView.findViewById(R.id.map_event);
+
 
 
             btnEdit  = itemView.findViewById(R.id.btnEditNews);
@@ -142,6 +164,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         }
 
+
+
     }
+
+
 
 }

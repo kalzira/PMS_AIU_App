@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -104,6 +105,10 @@ public class AddNewsActivity extends AppCompatActivity {
 
 
                         descriptionTxt = edittext.getText().toString();
+                        if(TextUtils.isEmpty(descriptionTxt.trim())){
+                            edittext.setText("Please fill description");
+
+                        }
 
                     }
                 });
@@ -124,6 +129,22 @@ public class AddNewsActivity extends AppCompatActivity {
                 if (mUploadTask != null && mUploadTask.isInProgress()) {
                     Toast.makeText(AddNewsActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
                 } else {
+                    if(TextUtils.isEmpty(mEtTime.getText().toString().trim())){
+                        mEtTime.setError("Please specify event time");
+                        return;
+                    }
+                    if(TextUtils.isEmpty(mEtTitle.getText().toString().trim())){
+                        mEtTitle.setError("Please set title for news");
+                        return;
+                    }
+                    if (TextUtils.isEmpty(descriptionTxt)){
+                        Toast.makeText(AddNewsActivity.this, "Please add description of news",
+                                Toast.LENGTH_SHORT).show();
+                    }
+
+
+
+
                     mProgressBar.setVisibility(View.VISIBLE);
                     uploadFile();
                 }
@@ -178,6 +199,8 @@ public class AddNewsActivity extends AppCompatActivity {
                     }
                 }
             });
+        }else{
+            Toast.makeText(this, "Choose image from gallery", Toast.LENGTH_SHORT).show();
         }
     }
     private void openFileChooser() {

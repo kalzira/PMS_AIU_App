@@ -125,6 +125,7 @@ public class SignUpActivity extends AppCompatActivity{
                 }
                 if(TextUtils.isEmpty(department)){
                     mDepartment.setError("Department is required");
+                    return;
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
