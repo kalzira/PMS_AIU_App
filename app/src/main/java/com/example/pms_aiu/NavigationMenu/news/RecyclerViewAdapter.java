@@ -1,21 +1,24 @@
 package com.example.pms_aiu.NavigationMenu.news;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pms_aiu.Models.News;
 import com.example.pms_aiu.R;
+
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import static android.view.View.GONE;
@@ -24,23 +27,34 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context mContext;
     private List<News> mNews;
-    private LinearLayout mLocationView;
 
+    ///
+    private OnItemClickListener mListener;
 
-    public RecyclerViewAdapter(Context context, List<News> news) {
+    public interface OnItemClickListener{
+        void OnItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
+///
+
+    public RecyclerViewAdapter(Context context, List<News> news ) {
         mContext = context;
         mNews = news;
     }
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.home_layout_item, parent, false);
-        mLocationView = v.findViewById(R.id.locationLayout);
-        return new ItemViewHolder(v);
+
+        return new ItemViewHolder(v, mListener);
     }
 
+
+
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, int position) {
-        News newsCurrent = mNews.get(position);
+    public void onBindViewHolder(final ItemViewHolder holder, int position) {
+        final News newsCurrent = mNews.get(position);
 
         if(newsCurrent.getLocation().equals("")){
 
@@ -66,65 +80,68 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     .centerCrop()
                     .into(holder.imageView);
         }
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent newsDetails = new Intent(v.getContext(), NewsDetailsActivity.class);
+                newsDetails.putExtra("Title", newsCurrent.getTitle());
+                newsDetails.putExtra("Image", newsCurrent.getImage());
+                newsDetails.putExtra("Location", newsCurrent.getLocation());
+                newsDetails.putExtra("Description", newsCurrent.getDescription());
+                newsDetails.putExtra("Time", newsCurrent.getTime());
+                v.getContext().startActivity(newsDetails);
+
+            }
+        });
+//        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
     }
     @Override
     public int getItemCount() {
         return mNews.size();
     }
-    public class ItemViewHolder extends RecyclerView.ViewHolder {
+    public class ItemViewHolder extends RecyclerView.ViewHolder{
         public TextView titleView, timeView, locationView;
         public ImageView imageView, mapView;
-        public ItemViewHolder(View itemView) {
+        public Button btnEdit, btnDelete;
+        public ItemViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             titleView = itemView.findViewById(R.id.titleNews);
             timeView = itemView.findViewById(R.id.timeNews);
             locationView = itemView.findViewById(R.id.locationNews);
-
             imageView = itemView.findViewById(R.id.imgNews);
             mapView = itemView.findViewById(R.id.map_event);
+
+
+            btnEdit  = itemView.findViewById(R.id.btnEditNews);
+            btnDelete = itemView.findViewById(R.id.btnDeleteNews);
+
+            btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener!=null){
+                        int positon= getAdapterPosition();
+                        listener.OnItemClick(positon);
+                    }
+                }
+            });
+
+
+
         }
+
     }
-
-
-//    private OnItemClickListener mListener;
-//
-//    public interface OnItemClickListener{
-//        void OnItemClick(int position);
-//    }
-//    public void setOnItemClickListener(OnItemClickListener listener){
-//        mListener = listener;
-//    }
-//    private ArrayList<ItemHomeModel> mItemHomeList;
-//
-//    public static class ItemViewHolder extends RecyclerView.ViewHolder{
-//        public ImageView home_photo, map_event;
-//        public TextView location_event, time_event, title_event;
-//
-//
-//        public ItemViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
-//            super(itemView);
-//            //img
-//            home_photo = itemView.findViewById(R.id.imgNews);
-//            map_event = itemView.findViewById(R.id.map_event);
-//            //txt
-//            location_event = itemView.findViewById(R.id.locationNews);
-//            time_event = itemView.findViewById(R.id.timeNews);
-//            title_event = itemView.findViewById(R.id.titleNews);
-//
-//
-//
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    if(listener!=null){
-//                        int positon= getAdapterPosition();
-//                        listener.OnItemClick(positon);
-//                    }
-//                }
-//            });
-//
-//
-//        }
-//    }
 
 }

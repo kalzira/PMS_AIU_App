@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".NavigationMenu.news.NewsDetailsActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -23,6 +24,7 @@
             <LinearLayout
                 android:id="@+id/parentLayout"
                 android:orientation="vertical"
+                android:layout_marginTop="30dp"
                 android:background="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -43,8 +45,7 @@
                     android:layout_width="382dp"
                     android:layout_height="230dp"
                     android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/home_photo"/>
+                    android:layout_gravity="center"/>
 
                 <!--    &lt;!&ndash; 11:00-13:00 &ndash;&gt;-->
 
@@ -60,6 +61,7 @@
                     android:textAppearance="@style/time"/>
 
                 <LinearLayout
+                    android:id="@+id/locationLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -113,9 +115,6 @@
     <!--<include layout="@layout/content_scrolling" />-->
 
     <androidx.core.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -129,5 +128,37 @@
             android:text="@string/txt_newsDetail" />
 
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextAppearance="@style/TitleText">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/title_profile"
+            android:textAppearance="@style/title_profile"
+            android:translationY="-0.86sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.appcompat.widget.Toolbar>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

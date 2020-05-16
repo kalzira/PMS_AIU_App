@@ -1,7 +1,18 @@
 package com.example.pms_aiu.Models;
 
+import com.google.firebase.database.Exclude;
+
 public class News {
-    private String Title, Image, Time, Location, Description;
+    private String Title;
+    private String Image;
+    private String Time;
+    private String Location;
+    private String Description;
+
+
+    private String mKey;
+
+
 
 
     public News() {
@@ -53,5 +64,14 @@ public class News {
 
     public void setLocation(String location) {
         Location = location;
+    }
+
+    @Exclude
+    public String getKey() {
+        return mKey;
+    }
+    @Exclude
+    public void setKey(String key) {
+        this.mKey = key;
     }
 }
