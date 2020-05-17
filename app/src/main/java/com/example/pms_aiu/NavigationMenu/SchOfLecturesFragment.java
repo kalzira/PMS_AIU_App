@@ -69,13 +69,13 @@ public class SchOfLecturesFragment extends Fragment {
                     webView.loadUrl("http://com.iaau.edu.kg/calendar/schedule-of-lectures.html");
 
                 }
-                if(user.getDepartment().contains("MAT")){
+                else if(user.getDepartment().contains("MAT")){
                     webView.loadUrl("https://docs.google.com/spreadsheets/d/1bUVQTZo9ecq7GHSVKKsqKctbwGkfD9CFYGJnQY2eyVg/edit?ts=5c4195b3#gid=757678406");
                 }
-                if (user.getDepartment().contains("EN")){
+                else if (user.getDepartment().contains("EN")){
                     webView.loadUrl("http://electronic.iaau.edu.kg/?q=en/article/schedule-lecture");
                 }
-                if (user.getDepartment().contains("IE")){
+                else if (user.getDepartment().contains("IE")){
                     //Чтобы открыть этот опубликованный документ, необходимо иметь разрешение.
                     webView.loadUrl("http://ie.iaau.edu.kg/");
                 }

@@ -140,6 +140,7 @@ public class AddNewsActivity extends AppCompatActivity {
                     if (TextUtils.isEmpty(descriptionTxt)){
                         Toast.makeText(AddNewsActivity.this, "Please add description of news",
                                 Toast.LENGTH_SHORT).show();
+                        return;
                     }
 
 
