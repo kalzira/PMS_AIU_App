@@ -116,6 +116,7 @@ public class NewsFragment extends Fragment {
 
 
                         StorageReference imageRef = mStorage.getReferenceFromUrl(selectedNews.getImage());
+
                         imageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {

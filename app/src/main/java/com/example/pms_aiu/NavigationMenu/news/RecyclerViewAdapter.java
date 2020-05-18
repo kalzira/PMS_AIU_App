@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pms_aiu.Admin.EditNewsActivity;
 import com.example.pms_aiu.Models.News;
 import com.example.pms_aiu.R;
 
@@ -109,17 +110,32 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 newsDetails.putExtra("Location", newsCurrent.getLocation());
                 newsDetails.putExtra("Description", newsCurrent.getDescription());
                 newsDetails.putExtra("Time", newsCurrent.getTime());
+
                 v.getContext().startActivity(newsDetails);
 
             }
         });
-
-//        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+//        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //
 //            }
 //        });
+
+        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newsEdit = new Intent(v.getContext(), EditNewsActivity.class);
+               newsEdit.putExtra("position", holder.getAdapterPosition());
+                newsEdit.putExtra("Title", newsCurrent.getTitle());
+                newsEdit.putExtra("Image", newsCurrent.getImage());
+                newsEdit.putExtra("Location", newsCurrent.getLocation());
+                newsEdit.putExtra("Description", newsCurrent.getDescription());
+                newsEdit.putExtra("Time", newsCurrent.getTime());
+                newsEdit.putExtra("key", newsCurrent.getKey());
+               v.getContext().startActivity(newsEdit);
+            }
+        });
 //
 //        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -151,6 +167,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             btnDelete = itemView.findViewById(R.id.btnDeleteNews);
 
             btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener!=null){
+                        int positon= getAdapterPosition();
+                        listener.OnItemClick(positon);
+                    }
+                }
+            });
+
+            btnEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if(listener!=null){
