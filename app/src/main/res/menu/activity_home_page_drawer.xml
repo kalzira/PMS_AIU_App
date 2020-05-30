@@ -32,6 +32,8 @@
     <group
         android:id="@+id/group_2"
         android:checkableBehavior="none">
+
+
         <item
             android:id="@+id/nav_notifications"
             android:icon="@drawable/ic_notifications_black_24dp"

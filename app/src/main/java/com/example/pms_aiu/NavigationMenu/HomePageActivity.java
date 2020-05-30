@@ -15,6 +15,9 @@ import androidx.core.view.GravityCompat;
 
 import com.example.pms_aiu.MainActivity;
 import com.example.pms_aiu.Models.User;
+
+import com.example.pms_aiu.Notification.NotificationsFragment;
+import com.example.pms_aiu.Notification.SendActivity;
 import com.example.pms_aiu.R;
 
 import com.example.pms_aiu.SignUpActivity;
@@ -195,6 +198,17 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
             case R.id.nav_guest_signUp:
                 startActivity(new Intent(HomePageActivity.this, SignUpActivity.class));
                 break;
+                case R.id.nav_admin_send_notifications:
+
+            startActivity(new Intent(HomePageActivity.this, SendActivity.class));
+            break;
+
+            case R.id.nav_notifications:
+            case R.id.nav_admin_notifications:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new NotificationsFragment()).addToBackStack(null).commit();
+                break;
+
 
 
 

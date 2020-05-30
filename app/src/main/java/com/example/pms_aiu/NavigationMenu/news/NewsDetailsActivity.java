@@ -31,8 +31,7 @@ public class NewsDetailsActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar_profile); // id of your toolbar
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);// set the back arrow in toolbar
-        TextView title_toolbar = findViewById(R.id.title);
-        title_toolbar.setText("Back To News");
+
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
