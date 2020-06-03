@@ -169,7 +169,7 @@ public class NewsFragment extends Fragment {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     News news = postSnapshot.getValue(News.class);
                     news.setKey(postSnapshot.getKey());
-                    mNews.add(news);
+                    mNews.add(0,news);
 
                 }
 

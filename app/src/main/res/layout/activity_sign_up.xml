@@ -69,26 +69,21 @@
                 android:textAppearance="@style/username" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:orientation="vertical"
-                    android:paddingRight="15dp">
 
                     <EditText
                         android:id="@+id/etFirstName"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:layout_weight="0.5"
+                        android:layout_weight="0.3"
                         android:alpha="0.95"
-                        android:background="@null"
+                        android:background="@layout/border"
+                        android:padding="3dp"
                         android:gravity="top"
                         android:hint="First Name"
                         android:inputType="text"
@@ -96,30 +91,24 @@
                         android:lineSpacingExtra="2sp"
                         android:maxLength="100"
                         android:textAppearance="@style/label.name"
-                        android:translationY="-0.86sp" />
+                        android:translationY="-0.86sp"
+                        android:layout_marginRight="5dp" />
 
-                    <View
-                        android:id="@+id/bottom_line_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:layout_weight="0.5"
-                        android:background="@drawable/bottom_line" />
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:orientation="vertical">
+
+
+
 
                     <EditText
                         android:id="@+id/etLastName"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/bottom_line_name"
                         android:layout_marginTop="4dp"
                         android:alpha="0.95"
-                        android:background="@null"
+                        android:background="@layout/border"
+                        android:padding="3dp"
                         android:gravity="top"
                         android:hint="Last Name"
                         android:text="Sabytakunova"
@@ -129,12 +118,7 @@
                         android:textAppearance="@style/label.name"
                         android:translationY="-0.86sp" />
 
-                    <View
-                        android:id="@+id/bottom_line_sname"
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="@drawable/bottom_line" />
-                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -157,7 +141,8 @@
                 android:layout_below="@+id/id"
                 android:layout_marginTop="4dp"
                 android:alpha="0.95"
-                android:background="@null"
+                android:background="@layout/border"
+                android:padding="3dp"
                 android:gravity="top"
                 android:hint="ID"
                 android:text="101010101"
@@ -166,12 +151,6 @@
                 android:maxLength="100"
                 android:textAppearance="@style/label.name"
                 android:translationY="-0.86sp" />
-
-            <View
-                android:id="@+id/bottom_line_id"
-                android:layout_width="321dp"
-                android:layout_height="2dp"
-                android:background="@drawable/bottom_line" />
 
             <!--        EMAIL AND PASSWORD-->
 
@@ -193,7 +172,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:alpha="0.95"
-                        android:background="@null"
+                        android:background="@layout/border"
+                        android:padding="3dp"
                         android:gravity="top"
                         android:hint="name.surname@iaau.edu.kg"
                         android:text="sabytakunovakalzira@gmail.com"
@@ -202,11 +182,6 @@
                         android:textAppearance="@style/label.name"
                         android:translationY="-0.86sp" />
 
-                    <View
-                        android:id="@+id/bottom_line_email"
-                        android:layout_width="321dp"
-                        android:layout_height="2dp"
-                        android:background="@drawable/bottom_line" />
 
 
 
@@ -217,7 +192,8 @@
                         android:layout_below="@+id/bottom_line_email"
                         android:layout_marginTop="13dp"
                         android:alpha="0.95"
-                        android:background="@null"
+                        android:background="@layout/border"
+                        android:padding="3dp"
                         android:gravity="top"
                         android:hint="Password of e-mail"
                         android:inputType="textPassword"
@@ -227,13 +203,6 @@
                         android:translationY="-0.86sp">
 
                     </EditText>
-
-                    <View
-                        android:id="@+id/bottom_line_psw"
-                        android:layout_width="321dp"
-                        android:layout_height="2dp"
-                        android:layout_below="@+id/etLastName"
-                        android:background="@drawable/bottom_line" />
 
             <!--    PHONE-->
             <TextView
@@ -256,7 +225,8 @@
                 android:layout_below="@+id/bottom_line_id"
                 android:layout_marginTop="4dp"
                 android:alpha="0.95"
-                android:background="@null"
+                android:background="@layout/border"
+                android:padding="3dp"
                 android:gravity="top"
                 android:text="070710101"
                 android:hint="Enter your phone number"
@@ -265,11 +235,6 @@
                 android:textAppearance="@style/label.name"
                 android:translationY="-0.86sp" />
 
-            <View
-                android:id="@+id/bottom_line_phone"
-                android:layout_width="321dp"
-                android:layout_height="2dp"
-                android:background="@drawable/bottom_line" />
 
 
             <!--DEPARTMENT-->
@@ -292,7 +257,8 @@
                 android:layout_below="@+id/bottom_line_id"
                 android:layout_marginTop="4dp"
                 android:alpha="0.95"
-                android:background="@null"
+                android:background="@layout/border"
+                android:padding="3dp"
                 android:gravity="top"
                 android:text="COM-16"
                 android:hint="COM-16"
@@ -301,11 +267,6 @@
                 android:textAppearance="@style/label.name"
                 android:translationY="-0.86sp" />
 
-            <View
-                android:id="@+id/bottom_line_department"
-                android:layout_width="321dp"
-                android:layout_height="2dp"
-                android:background="@drawable/bottom_line" />
 
         </LinearLayout>
     </FrameLayout>

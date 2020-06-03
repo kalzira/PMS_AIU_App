@@ -13,13 +13,17 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".Notification.NotificationDetailActivity" />
+        <activity android:name=".Notification.NotificationDetailActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"/>
         <activity android:name=".Admin.EditNewsActivity" />
         <activity
             android:name=".Admin.AddNewsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".NavigationMenu.news.NewsDetailsActivity" />
+        <activity android:name=".NavigationMenu.news.NewsDetailsActivity"
+            android:parentActivityName=".NavigationMenu.HomePageActivity"/>
         <activity
             android:name=".NavigationMenu.HomePageActivity"
             android:label="@string/title_activity_home_page"

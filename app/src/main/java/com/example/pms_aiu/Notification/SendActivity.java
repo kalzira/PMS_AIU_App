@@ -25,9 +25,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.pms_aiu.Models.News;
 import com.example.pms_aiu.Models.Notifications;
 import com.example.pms_aiu.NavigationMenu.HomePageActivity;
 import com.example.pms_aiu.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -54,7 +56,8 @@ public class SendActivity extends AppCompatActivity {
 
     private RequestQueue mRequestQueue;
     private String URL = "https://fcm.googleapis.com/fcm/send";
-
+private FirebaseAuth firebaseAuth;
+private DatabaseReference mRef;
 
 
 
@@ -81,8 +84,12 @@ public class SendActivity extends AppCompatActivity {
         etTxtMessage = findViewById(R.id.edit_text_message);
         etTxtDescription = findViewById(R.id.edit_text_description);
 
+        mRef = FirebaseDatabase.getInstance().getReference("Notifications");
         mRequestQueue = Volley.newRequestQueue(this);
-        FirebaseMessaging.getInstance().subscribeToTopic("push");
+        firebaseAuth = FirebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser()!= null) {
+            FirebaseMessaging.getInstance().subscribeToTopic("push");
+        }
 
 
 
@@ -158,6 +165,10 @@ public class SendActivity extends AppCompatActivity {
         }
 
 
+        Notifications notifications = new Notifications(title,message, description);
+
+
+        mRef.push().setValue(notifications);
         etTxtTitle.setText("");
         etTxtMessage.setText("");
         etTxtDescription.setText("");

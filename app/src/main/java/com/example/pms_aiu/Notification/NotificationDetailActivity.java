@@ -3,15 +3,20 @@ package com.example.pms_aiu.Notification;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.TextView;
+
 
 import com.example.pms_aiu.R;
 
 public class NotificationDetailActivity extends AppCompatActivity {
 
     private TextView mTitle, mMessage, mDescription;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,7 @@ public class NotificationDetailActivity extends AppCompatActivity {
             }
         });
 
+
         mTitle = findViewById(R.id.titlePush);
         mMessage = findViewById(R.id.messagePush);
         mDescription = findViewById(R.id.txt_pushDetails);
@@ -41,5 +47,7 @@ public class NotificationDetailActivity extends AppCompatActivity {
         mMessage.setText(message);
         mDescription.setText(description);
 
+
     }
 }
+

@@ -3,12 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:tag="fragment_profile"
     android:layout_height="match_parent">
-
-
-
-
-
 
 
     <androidx.appcompat.widget.Toolbar
@@ -32,16 +28,24 @@
             android:lineSpacingExtra="2sp"
             android:text="@string/title_profile"
             android:textAppearance="@style/title_profile"
-            android:translationY="-0.86sp"
             android:textColor="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:translationY="-0.86sp"/>
+
+        <Button
+            android:id="@+id/editProfileBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_edit"
+            android:layout_gravity="right"
+            android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginRight="8dp">
+
+        </Button>
 
 
     </androidx.appcompat.widget.Toolbar>
+
     <TextView
         android:id="@+id/bottomLine_toolbar"
         android:layout_width="match_parent"
@@ -50,6 +54,7 @@
         android:layout_height="0.1dp">
 
     </TextView>
+
 
     <View
         android:id="@+id/photo_profile"
@@ -63,15 +68,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_profile" />
-
-
-
-
-
-
-
-
-
 
 
 
@@ -113,10 +109,70 @@
                         android:layout_height="wrap_content"
                         android:fontFeatureSettings="pnum, lnum"
                         android:gravity="top"
+
                         android:lineSpacingExtra="4sp"
                         android:text="@string/kalzira_s"
                         android:textAppearance="@style/info_profile"
                         android:translationY="-1.8sp" />
+
+<!--                EDIT NAME-->
+
+                <LinearLayout
+                    android:id="@+id/stName_edit_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                        <EditText
+                            android:id="@+id/stFName_edit_profile"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:alpha="0.95"
+                            android:background="@layout/border"
+                            android:padding="3dp"
+                            android:gravity="top"
+                            android:layout_marginEnd="3dp"
+                            android:hint="First Name"
+                            android:inputType="text"
+                            android:text="Kalzira"
+                            android:lineSpacingExtra="2sp"
+                            android:maxLength="100"
+                            android:textAppearance="@style/label.name"
+                            android:translationY="-0.86sp"
+                            android:layout_marginRight="3dp" />
+
+
+
+                        <EditText
+                            android:id="@+id/stLName_edit_profile"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.7"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/bottom_line_name"
+                            android:alpha="0.95"
+                            android:background="@layout/border"
+                            android:padding="3dp"
+                            android:gravity="top"
+                            android:layout_marginEnd="3dp"
+                            android:hint="Last Name"
+                            android:text="Sabytakunova"
+                            android:inputType="text"
+                            android:lineSpacingExtra="2sp"
+                            android:maxLength="100"
+                            android:textAppearance="@style/label.name"
+                            android:translationY="-0.86sp"
+                            android:layout_marginRight="3dp" />
+
+
+                </LinearLayout>
+
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -151,6 +207,7 @@
                         android:text="@string/some_id"
                         android:textAppearance="@style/info_profile"
                         android:translationY="-1.8sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -219,6 +276,25 @@
                         android:text="0707111111"
                         android:textAppearance="@style/info_profile"
                         android:translationY="-1.8sp" />
+
+                <EditText
+                    android:id="@+id/phone_edit_profile"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.25"
+                    android:layout_height="wrap_content"
+                    android:background="@layout/border"
+                    android:padding="3dp"
+                    android:gravity="top"
+                    android:visibility="gone"
+                   android:layout_marginEnd="3dp"
+                    android:text="070710101"
+                    android:hint="Enter your phone number"
+                    android:inputType="phone"
+                    android:lineSpacingExtra="2sp"
+                    android:maxLength="100"
+                    android:textAppearance="@style/info_profile"
+                    android:translationY="-0.86sp"
+                    android:layout_marginRight="3dp" />
             </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -253,12 +329,46 @@
                     android:text="COM-16"
                     android:textAppearance="@style/info_profile"
                     android:translationY="-1.8sp" />
+
+        <EditText
+            android:id="@+id/department_edit_profile"
+            android:layout_width="0dp"
+            android:layout_weight="1.25"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottom_line_id"
+            android:alpha="0.95"
+            android:background="@layout/border"
+            android:padding="3dp"
+            android:layout_marginEnd="3dp"
+            android:gravity="top"
+            android:visibility="gone"
+            android:text="COM-16"
+            android:hint="COM-16"
+            android:inputType="textCapCharacters"
+            android:lineSpacingExtra="2sp"
+            android:textAppearance="@style/label.name"
+            android:translationY="-0.86sp"
+            android:layout_marginRight="3dp" />
     </LinearLayout>
         </LinearLayout>
 
 
 
+    <Button
+        android:id="@+id/saveProfileBtn"
+        android:layout_width="298dp"
+        android:layout_height="42dp"
+        android:visibility="gone"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_registr_bg"
+        android:text="Save"
+        android:textAppearance="@style/title_registr_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
 
+    </Button>
 
 
 
