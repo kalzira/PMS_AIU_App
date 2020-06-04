@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ProgressBar
+        android:id="@+id/progress_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/white"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextAppearance="@style/TitleText">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="2sp"
+                android:text="Students"
+                android:textAppearance="@style/title_profile"
+                android:translationY="-0.86sp"
+                android:textColor="@android:color/black" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:id="@+id/bottomLine_toolbar"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_profile"
+            android:background="@android:color/black"
+            android:layout_height="0.1dp">
+
+        </TextView>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

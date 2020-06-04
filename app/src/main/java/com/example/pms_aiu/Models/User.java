@@ -1,8 +1,11 @@
 package com.example.pms_aiu.Models;
 
+import com.google.firebase.database.Exclude;
+
 public class User {
     private String FirstName, LastName, Phone,
             StudentId, Department, Email;
+    private String mKey;
 
     public User() {
     }
@@ -65,5 +68,15 @@ public class User {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    @Exclude
+    public String getmKey() {
+        return mKey;
+    }
+
+    @Exclude
+    public void setmKey(String mKey) {
+        this.mKey = mKey;
     }
 }

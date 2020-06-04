@@ -23,6 +23,7 @@ import com.example.pms_aiu.R;
 import com.example.pms_aiu.SignUpActivity;
 import com.example.pms_aiu.NavigationMenu.news.NewsFragment;
 
+import com.example.pms_aiu.Students.StudentsFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -209,7 +210,10 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
                         new NotificationsFragment()).addToBackStack(null).commit();
                 break;
 
-
+            case R.id.nav_admin_students:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new StudentsFragment()).addToBackStack(null).commit();
+                break;
 
 
         }
